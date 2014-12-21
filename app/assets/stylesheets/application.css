@@ -1,0 +1,267 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+body {
+    padding-top: 50px;
+    font-size: 12px;
+    color: #898989;
+    /*padding-bottom: 20px;*/
+    /*background: url("/assets/bg.jpg");*/
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/* styles for validation helpers */
+.field-validation-error {
+    color: #b94a48;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #b94a48;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #b94a48;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+a { color: #2981a4; text-decoration: underline; }
+a:hover { text-decoration: none;}
+
+ul { list-style-type: none;overflow: hidden;padding: 0;}
+
+.black { color: #000;}
+
+.wbg-color { background-color: #f9faf9;}
+.wgreenbg-color { background-color: #f2fdda;border-color: #7fab2e;}
+
+h1 { color: #585858;}
+h3, h4 { color: #717171;}
+
+.btn-orange {
+    background-color: #eb751d;
+    font-weight: bold;
+    text-shadow: 1px 1px #333;
+    color: #fff;
+}
+.btn-orange:hover {
+    color: #fff;
+}
+
+
+
+/* Progress bar */
+.progress {
+    background-color: #f7f7f7;
+    background-image: -moz-linear-gradient(center top , #f5f5f5, #f9f9f9);
+    background-repeat: repeat-x;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset;
+    height: 24px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.progress .bar {
+    background-color: #0e90d2;
+    background-repeat: repeat-x;
+    box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.15) inset;
+    box-sizing: border-box;
+    color: #ffffff;
+    font-size: 15px;
+    height: 26px;
+    line-height: 25px;
+    padding-left: 12px;
+    text-align: left;
+    transition: width 0.6s ease 0s;
+    width: 0;
+}
+
+.progress-striped .bar {
+    background-color: #149bdf;
+}
+.progress-success .bar, .progress-green .bar {
+    background-color: #8fbe32;
+}
+
+
+.progress .bar small {
+    color: #fafafa;
+    font-size: 12px;
+}
+
+
+
+
+
+/* Main sidebar */
+.navbar-brand { background: url("/assets/logo.png") no-repeat 0 center;display: block;width: 156px;height: 50px;margin-right: 60px;}
+.navbar-fixed-top { border-bottom: 2px solid #2981a4;}
+
+.search-panel { padding-bottom: 3px;background: url("/assets/bg_subnav.jpg") left bottom repeat-x;}
+.search-panel ul.nav { margin-top: 5px;}
+.search-panel ul.nav > li > a { padding: 10px 6px;}
+
+.pn-login-social { background: #f9faf9;}
+.pn-login-social h4 { font-size: 16px;margin: 0 0 20px 0;color: #414141;}
+.social-icons-login { list-style-type: none;padding: 0;text-align: center;overflow: hidden;margin-left: 15px;}
+.social-icons-login li { float: left;margin: 0 15px;}
+.social-icons-login a { padding-top: 50px;display: block;width: 70px;font-size: 12px;}
+.social-icons-login a.vk { background: url("/assets/icons/ico_login_vk.png") no-repeat center top; }
+.social-icons-login a.tw { background: url("/assets/icons/ico_login_tw.png") no-repeat center top; }
+.social-icons-login a.fb { background: url("/assets/icons/ico_login_fb.png") no-repeat center top; }
+
+
+.review-header {background: url("/assets/line1.png") repeat-x 0 bottom;}
+.review-header h5 {background: url("/assets/ico_people.png") no-repeat; padding-left: 40px; height: 22px; line-height: 24px;}
+.review-header a.list { margin-top: 12px;}
+
+.review { margin-top: 20px;color: #898989;position: relative;}
+.review .message_panel { padding-top: 24px;position: relative;}
+.review .message_panel .corner {background: url("/assets/review_triangle.png"); width: 24px; height: 24px;position: absolute;left: 46px;top: 3px;}
+.review .ava img { width: 90px;height: 90px;}
+
+.review .info p { margin: 0;}
+.review .info ul.rate { margin-right: 20px;}
+.review .info ul.rate li { float: left;margin-right: 3px;}
+.review .info ul.rate a { background: url("/assets/trust_star1.png") no-repeat;width: 22px;height: 22px;display: block;}
+
+.review .info .calendar { font-size: 11px;background: url("/assets/calendar_ico.png") no-repeat;height: 16px;padding-left: 20px;}
+
+.review .message { color: #7d7d7d; background: url("/assets/line1.png") repeat-x 0 bottom;padding-bottom: 5px; }
+.review .message .panel {background-color: #f9faf9;margin-bottom: 15px;}
+/* Main sidebar END */
+
+
+.main-review { color: #7d7d7d;}
+.main-review .ava img.img-circle { width: 160px;height: 160px;margin-bottom: 10px;}
+.main-review .ava ul.rate { margin-left: 20px;}
+.main-review .ava ul.rate li { float: left;margin-right: 3px;}
+.main-review .ava ul.rate a { background: url("/assets/trust_star1.png") no-repeat;width: 22px;height: 22px;display: block;}
+
+.main-review .info { width: 72%;}
+.main-review .info h3 { color: #636363;margin: 10px 0 5px 0;}
+.main-review .info h4 { color: #525252;font-size: 16px;font-weight: bold;}
+.main-review .info .calendar { font-size: 11px;background: url("/assets/calendar_ico.png") no-repeat;height: 16px;padding-left: 20px;}
+.main-review .info .buttons { margin-top: 30px;}
+.main-review .info .buttons a.more { line-height: 30px;}
+.main-review .info .buttons .btn-default { background-color: #eb751d;color: #fff;font-weight: bold;}
+
+
+.main-stat h3 { margin-bottom: 0;font-size: 20px;color: #7d7d7d;}
+.best .column-head { background: url("/assets/ten_best.png") no-repeat left center;height: 42px;padding-left: 50px;margin-bottom: 30px;}
+.best td.mark { color: #749922;}
+.worse .column-head { background: url("/assets/ten_worse.png") no-repeat left center;height: 42px;padding-left: 50px;margin-bottom: 30px;}
+.worse td.mark { color: #e51539;}
+
+.tags {background: url("/assets/line1.png") repeat-x 0 top; padding-top: 15px;}
+.tag-list a { text-decoration: none;}
+
+
+
+
+footer {
+    padding-top: 25px;
+    margin-top: 40px;
+    background-color: #f5f5f5;
+    bottom: 0;
+    height: 100px;
+    /*position: absolute;*/
+    width: 100%;
+}
+footer .container {
+    padding-top: 25px;
+    background: url("/assets/logo_ts_footer.png") no-repeat 30px 0;
+}
+footer .container a { color: #8a8a8a;text-decoration: none;font-size: 12px;}
+
+
+
+
+
+
+/* make sidebar nav vertical */
+@media (min-width: 768px) {
+    .sidebar-nav .navbar .navbar-collapse {
+        padding: 0;
+        max-height: none;
+    }
+    .sidebar-nav .navbar ul {
+        float: none;
+    }
+    .sidebar-nav .navbar ul:not {
+        display: block;
+    }
+    .sidebar-nav .navbar li {
+        float: none;
+        display: block;
+    }
+    .sidebar-nav .navbar li a {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+}
+
+.navbar-nav .navbar-nav {
+    padding-left: 25px;
+}
+
+
+.categories .table a {text-decoration: none;}
+.categories .table a:hover {text-decoration: underline;}
+.categories .table td.mark { color: #749922;}
+
+
+
+
+
+.company-reviews .user-ava { width: 200px;}
+.company-reviews h2 { margin-right: 10px;}
+.company-reviews .stars { margin-bottom: 15px;}
+.company-reviews ul.rate { }
+.company-reviews ul.rate li { float: left; margin-right: 3px;}
+.company-reviews ul.rate a { background: url("/assets/trust_star1.png") no-repeat;width: 22px;height: 22px;display: block;}
+
+.company-reviews .review_from { background: url("/assets/review/check.png") no-repeat;line-height: 12px;color: #000;margin-top: 5px!important;padding-left: 16px;}
+.company-reviews .links { overflow: hidden;margin-top: 10px;margin-bottom: 0;}
+.company-reviews .links li { float: left;margin-right: 15px;}
+.company-reviews .links li a {color: #898989}
+
+.company-reviews-user .btn { margin-top: 20px;}
