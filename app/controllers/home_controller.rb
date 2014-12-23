@@ -4,5 +4,6 @@ class HomeController < ApplicationController
   ## before_filter :authenticate_user!, :only => [:action1, :action2]
 
   def index
+
   end
 end
