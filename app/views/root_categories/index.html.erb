@@ -1,0 +1,31 @@
+<h1>Listing root_categories</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Index</th>
+      <th>Name</th>
+      <th>Slug</th>
+      <th>Icon Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @root_categories.each do |root_category| %>
+      <tr>
+        <td><%= root_category.id %></td>
+        <td><%= root_category.name %></td>
+        <td><%= root_category.slug %></td>
+        <td><%= root_category.iconName %></td>
+        <td><%= link_to 'Show', root_category %></td>
+        <td><%= link_to 'Edit', edit_root_category_path(root_category) %></td>
+        <td><%= link_to 'Destroy', root_category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Root category', new_root_category_path %>

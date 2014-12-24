@@ -1,0 +1,17 @@
+<p>
+  <strong>Name:</strong>
+  <%= @root_category.name %>
+</p>
+
+<p>
+  <strong>Slug:</strong>
+  <%= @root_category.slug %>
+</p>
+
+<p>
+  <strong>Icon Name:</strong>
+  <%= @root_category.iconName %>
+</p>
+
+<%= link_to 'Edit', edit_root_category_path(@root_category) %> |
+<%= link_to 'Back', root_categories_path %>

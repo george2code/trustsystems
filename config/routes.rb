@@ -13,6 +13,9 @@ Rails.application.routes.draw do
   end
 
   resources :users
+  resources :root_categories
+
+  get 'categories' => 'home#categorylist'
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'

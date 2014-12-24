@@ -6,4 +6,9 @@ class HomeController < ApplicationController
   def index
 
   end
+
+
+  def categorylist
+
+  end
 end
