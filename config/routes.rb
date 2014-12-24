@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   resources :root_categories
 
   get 'categories' => 'home#categorylist'
+  get 'categories/:id' => 'home#categorylist'
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'

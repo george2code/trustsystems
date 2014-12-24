@@ -9,6 +9,6 @@ class HomeController < ApplicationController
 
 
   def categorylist
-
+    @root_categories = RootCategory.all
   end
 end

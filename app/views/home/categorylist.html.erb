@@ -1,1 +1,59 @@
-<h1>list</h1>
+<div class="row">
+  <div class="col-md-3">
+    <h3>Категории</h3>
+    <br />
+
+    <div class="sidebar-nav">
+        <div class="navbar navbar-default" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <span class="visible-xs navbar-brand">Sidebar menu</span>
+            </div>
+            <div class="navbar-collapse collapse sidebar-navbar-collapse">
+                <%= categories_menu(@root_categories, params[:id]).html_safe %>
+            </div><!--/.nav-collapse -->
+        </div>
+    </div>
+  </div>
+
+  <div class="col-md-9 categories">
+    <h3>Лучшие компании из основных категорий</h3>
+    <br />
+
+    <div class="row">
+      <% @root_categories.each_slice(4) do |root_category| %>
+          <div class="col-md-4">
+            <% root_category.each do |rootcat| %>
+                <h4><%= link_to rootcat.name, controller: "home", action: "categorylist", id: rootcat.slug %></h4>
+                <table class="table table-striped">
+                  <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td><a href="#">Silverimpressions</a></td>
+                        <td class="mark">Otto</td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td><a href="#">Myfavoritebabycarrier</a></td>
+                        <td class="mark">Otto</td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td><a href="#">Mastershoe-Myshu</a></td>
+                        <td class="mark">Otto</td>
+                      </tr>
+                  </tbody>
+                </table>
+
+            <% end %>
+          </div>
+      <% end %>
+    </div><!-- end row -->
+
+  </div>
+</div>
