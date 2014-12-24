@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141223173408) do
+ActiveRecord::Schema.define(version: 20141224160810) do
 
   create_table "root_categories", force: true do |t|
     t.string   "name",       null: false
@@ -20,6 +20,17 @@ ActiveRecord::Schema.define(version: 20141223173408) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "subcategories", force: true do |t|
+    t.integer  "root_category_id"
+    t.string   "name",             null: false
+    t.text     "description"
+    t.string   "slug",             null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "subcategories", ["root_category_id"], name: "index_subcategories_on_root_category_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

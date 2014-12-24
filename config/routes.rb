@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :subcategories
+
   get 'home/index'
 
   devise_for :users
@@ -15,8 +17,11 @@ Rails.application.routes.draw do
   resources :users
   resources :root_categories
 
+
   get 'categories' => 'home#categorylist'
   get 'categories/:id' => 'home#categorylist'
+
+  resources :subcategories
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
