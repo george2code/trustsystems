@@ -32,21 +32,7 @@
                 <h4><%= link_to rootcat.name, controller: "home", action: "categorylist", id: rootcat.slug %></h4>
                 <table class="table table-striped">
                   <tbody>
-                      <tr>
-                        <td>1</td>
-                        <td><a href="#">Silverimpressions</a></td>
-                        <td class="mark">Otto</td>
-                      </tr>
-                      <tr>
-                        <td>2</td>
-                        <td><a href="#">Myfavoritebabycarrier</a></td>
-                        <td class="mark">Otto</td>
-                      </tr>
-                      <tr>
-                        <td>3</td>
-                        <td><a href="#">Mastershoe-Myshu</a></td>
-                        <td class="mark">Otto</td>
-                      </tr>
+                      <%= sub_categories(rootcat) %>
                   </tbody>
                 </table>
 

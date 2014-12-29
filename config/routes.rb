@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :companies
+
   resources :subcategories
 
   get 'home/index'
@@ -14,12 +16,15 @@ Rails.application.routes.draw do
     get '/login' => 'devise/sessions#new'
   end
 
-  resources :users
+  # resources :users
   resources :root_categories
+  resources :company_subcategories,    only: [:create, :destroy]
 
 
   get 'categories' => 'home#categorylist'
   get 'categories/:id' => 'home#categorylist'
+
+  get 'companies/:slug' => 'companies#show'
 
   resources :subcategories
 

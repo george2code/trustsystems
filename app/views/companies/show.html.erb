@@ -1,0 +1,180 @@
+<div class="row">
+  <div class="col-md-8 company-reviews-info">
+
+
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Отзывы о <%= @company.name %></h1>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-3 logo">
+        <% if @company.logo? %>
+            <img src="<%= @company.logo %>" class="img-circle" alt="" />
+        <% else %>
+            <img src="/assets/review/company_logo.jpg" data-holder-rendered="true" class="img-circle" alt="" />
+        <% end %>
+      </div>
+      <div class="col-md-9 review">
+        <div class="info">
+          <div class="rev">
+            <h3 class="pull-left">Идеально</h3>
+            <!--@if (Model.IsUserCanEvaluate) {-->
+            <a class="pull-right btn btn-success" href="23">Оставить отзыв о компании</a>
+            <!--}-->
+            <div class="clearfix"></div>
+          </div>
+
+          <p class="mark">8 из 10</p>
+          <div>
+            <ul class="rate pull-left">
+              <li><a href="#"></a></li>
+              <li><a href="#"></a></li>
+              <li><a href="#"></a></li>
+              <li><a href="#"></a></li>
+              <li><a href="#"></a></li>
+            </ul>
+
+          </div>
+          <div class="clearfix"></div>
+          <p class="stat">12 отзывов на Trust Systems </p>
+          <p>Самый свежий отзыв добавлен 2 часа назад</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row">
+        <div class="review_list">
+          <div class="review-header clearfix">
+            <h5 class="pull-left">Отзывы (214)</h5>
+          </div>
+
+            <% 5.times do %>
+                <%= render 'companies/company_review' %>
+            <% end %>
+
+          <div class="row text-center">
+            <a href="#" class="btn btn-warning">Показать больше компаний</a>
+            <br />
+          </div>
+
+        </div>
+    </div>
+
+
+
+  </div>
+
+
+  <div class="col-md-4 sidebar-company">
+    <!-- rating table -->
+    <div class="panel panel-default mb30">
+      <div class="panel-body">
+        <h4>Распределение рейтинга</h4>
+        <img src="/assets/review/rate_stats.jpg" alt="" />
+      </div>
+    </div>
+
+
+    <div class="company_about mb30">
+      <h3>О <%= @company.name %></h3>
+      <p><%= @company.description %></p>
+      <p>
+        <a href="#" class="btn_orange btn btn-warning" target="_blank">Посетить <%= @company.name %></a>
+      </p>
+      <p>Делитесь мнениями. Расскажите друзьям, где совершать покупки. Поделиться значит позаботиться!</p>
+      <div class="share">
+        <img src="/assets/review/share_box.jpg" alt="" />
+      </div>
+    </div><!-- company_about -->
+
+
+    <div class="company_contacts mb30">
+      <h3>Связаться с <%= @company.name %></h3>
+      <p>Пишите на:<br /><a href="mail:<%= @company.email %>" class="email"><%= @company.email %></a></p>
+      <p>Позвоните нам – мы перезвоним.<br /> <%= @company.phone %></p>
+      <p>Мы живём здесь:</p>
+      <ul>
+        <li><%= @company.address %></li>
+        <li><%= @company.zip %> Brooklyn</li>
+        <li>United States</li>
+      </ul>
+    </div><!-- company_contacts -->
+
+
+    <!-- categories -->
+    <div class="company_categories mb30">
+        <h4>Категории</h4>
+        <table class="table table-striped">
+          <tr>
+            <td class="name"><%= @company.name %> оценена<br />
+              в категории <a href="#">For companies</a>
+            </td>
+            <td class="marked">
+              <strong>1</strong> из <strong>4</strong>
+            </td>
+          </tr>
+          <tr>
+            <td class="name">The Logo Company оценена<br />
+              в категории <a href="#">For companies</a>
+            </td>
+            <td class="marked">
+              1 из 4
+            </td>
+          </tr>
+          <tr>
+            <td class="name">The Logo Company оценена<br />
+              в категории <a href="#">For companies</a>
+            </td>
+            <td class="marked">
+              1 из 4
+            </td>
+          </tr>
+          <tr>
+            <td class="name">The Logo Company оценена<br />
+              в категории <a href="#">For companies</a>
+            </td>
+            <td class="marked">
+              1 из 4
+            </td>
+          </tr>
+        </table>
+    </div>
+
+
+    <!-- rating table -->
+    <div class="panel panel-default mb30">
+      <div class="panel-body">
+        <h4>Доверие - наше все</h4>
+        <p>Trust Systems создана для обеспечения лучших
+          условий  совершения покупок для каждого, это
+          значит, что мы делаем всё для того, чтобы
+          исключить поддельные отзывы. <a href="#">Узнать больше</a>.</p>
+        <p>Если Вы обнаружили поддельный отзыв,
+          оставленный на странице Вашей компании,
+          мы хотим об этом знать. <a href="#">Пожалуйста,
+          свяжитесь с нами здесь</a>.</p>
+      </div>
+    </div>
+
+
+    <!-- rating table -->
+    <div class="panel panel-default our_guarantee wgreenbg-color">
+      <div class="panel-body ">
+        <h4>Гарантия возврата денег безоговорочно</h4>
+        <p><strong>100% возврат денег. Без разговоров!</strong></p>
+        <p>Есть всего 2 результата, которые Вы получите от сотрудничества с нами, создавая логотип. </p>
+        <ol>
+          <li>Вы получите дизайн своей мечты.</li>
+          <li>Вы вернёте все свои деньги назад.</li>
+        </ol>
+        <p>Эта гарантия возврата денег действует
+          полных 3 месяца с момента размещения заказа.
+          Она продолжается всё время, до тех пор, пока
+          Вы не утвердите Ваш дизайн.</p>
+      </div>
+    </div>
+  </div><!-- END sidebar -->
+</div>

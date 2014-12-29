@@ -17,15 +17,14 @@ module HomeHelper
       menu += '</a>'
 
       # get subcategories
-      subcategoryList = Subcategory.joins(:root_category).where(root_categories: { id: root_category.id })
-      if (subcategoryList.count > 0)
+      subcategory_list = Subcategory.joins(:root_category).where(root_categories: { id: root_category.id })
+      if subcategory_list.count > 0
         menu += '<ul class="nav navbar-nav">'
-        subcategoryList.each do |subItem|
+        subcategory_list.each do |subItem|
           menu += '<li><a href="/categories/' + subItem.slug + '">- ' + subItem.name + '</a></li>'
         end
         menu += '</ul>'
       end
-
 
       menu += '</li>'
     end
@@ -33,5 +32,30 @@ module HomeHelper
     menu += '</ul>'
     # <li class="active"><a href="#">Искусство <span class="badge">216</span></a></li>
   end
+
+
+  def sub_categories(root_category)
+    content = ''
+
+    # content += root_category.subcategories.all.count.to_s
+
+    root_category.subcategories.all.each do |category|
+      company_index = 1
+
+      category.companies.all.each do |company|
+        content += '<tr>'
+        content += '<td>' + company_index.to_s + '</td>'
+        content += '<td><a href="/companies/' + company.slug + '">' + company.name + '</a></td>'
+        content += '<td class="mark">Otto</td>'
+        content += '</tr>'
+
+        company_index += 1
+      end
+    end
+
+
+    return content.html_safe
+  end
+
 
 end

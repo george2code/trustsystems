@@ -11,7 +11,43 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141224160810) do
+ActiveRecord::Schema.define(version: 20141229101714) do
+
+  create_table "companies", force: true do |t|
+    t.string   "name",        null: false
+    t.text     "description"
+    t.string   "home_site"
+    t.string   "slug",        null: false
+    t.integer  "country_id"
+    t.integer  "city_id"
+    t.string   "zip"
+    t.string   "email",       null: false
+    t.string   "phone"
+    t.text     "address"
+    t.string   "logo"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "companies_categories", id: false, force: true do |t|
+    t.integer "category_id", null: false
+    t.integer "company_id",  null: false
+  end
+
+  add_index "companies_categories", ["category_id", "company_id"], name: "index_companies_categories_on_category_id_and_company_id", unique: true
+  add_index "companies_categories", ["category_id"], name: "index_companies_categories_on_category_id"
+  add_index "companies_categories", ["company_id", "category_id"], name: "index_companies_categories_on_company_id_and_category_id", unique: true
+  add_index "companies_categories", ["company_id"], name: "index_companies_categories_on_company_id"
+
+  create_table "company_categories", force: true do |t|
+    t.integer  "subcategory_id"
+    t.integer  "company_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "company_categories", ["company_id"], name: "index_company_categories_on_company_id"
+  add_index "company_categories", ["subcategory_id"], name: "index_company_categories_on_subcategory_id"
 
   create_table "root_categories", force: true do |t|
     t.string   "name",       null: false

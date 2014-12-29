@@ -1,0 +1,28 @@
+
+
+
+<%= simple_form_for @company, as: :foo do |f| %>
+
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :home_site %>
+    <%= f.input :slug %>
+    <%= f.input :country_id %>
+    <%= f.input :city_id %>
+    <%= f.input :zip %>
+    <%= f.input :email %>
+    <%= f.input :phone %>
+    <%= f.input :address %>
+    <%= f.input :logo %>
+
+    <% if !@categories.nil? %>
+        <%= f.input :subcategory, collection: @categories, label_method: :name, :include_blank => false %>
+    <% end %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

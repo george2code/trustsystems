@@ -1,0 +1,21 @@
+// Place all the styles related to the companies controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.review_list .actions ul {margin: 0;}
+.review_list .actions li {float: left; margin-right: 15px;}
+.review_list .actions li a {font-size: 11px; color: #7d7d7d; text-decoration: none;}
+.review_list .actions li a:hover {text-decoration: underline;}
+
+.company-reviews-info {padding-right: 35px;}
+.company-reviews-info h1,
+.company-reviews-info h3 {margin-top: 0;}
+.company-reviews-info h1 {margin-bottom: 30px;}
+.company-reviews-info .logo {text-align: center;}
+.company-reviews-info .logo img {width: 160px; height: 160px; border: 1px solid #ddd;}
+.company-reviews-info .review {margin-top: 15px; margin-bottom: 40px;}
+
+.rate {margin-top: 10px;}
+
+.sidebar-company h4 {margin: 0 0 15px 0;}
+.sidebar-company .mb30 {margin-bottom: 40px;}
