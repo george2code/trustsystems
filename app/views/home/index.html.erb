@@ -24,142 +24,15 @@
       </div>
     </div>
 
+
     <div class="latest-reviews">
-      <div class="review-header clearfix">
-        <h5 class="pull-left">Люди пишут</h5>
-        <a class="list pull-right" href="#">списком</a>
-      </div>
-
-      <div class="review">
-        <div class="ava pull-left">
-          <img alt="140x140" class="img-circle" src="/assets/team/our-team02.jpg" data-holder-rendered="true" />
+        <div class="review-header clearfix">
+            <h5 class="pull-left">Люди пишут</h5>
+            <a class="list pull-right" href="#">списком</a>
         </div>
-        <div class="info pull-right">
-          <div class="clearfix">
-            <ul class="rate pull-left">
-              <li><a href="#"></a></li>
-              <li><a href="#"></a></li>
-              <li><a href="#"></a></li>
-              <li><a href="#"></a></li>
-              <li><a href="#"></a></li>
-            </ul>
-            <p  class="calendar pull-right">05.03.2013 / 20:30</p>
-          </div>
-          <p><a href="#">Михайло Бальзаминов</a></p>
-          <p>опубликовал свой первый отзыв</p>
-          <p>о <a href="#">www.trud.dp.ua</a></p>
-        </div>
-        <div class="clearfix"></div>
-        <div class="message_panel">
-          <div class="corner"></div>
-          <div class="message">
-            <div class="panel panel-default">
-              <div class="panel-body">
-                Заказывал комплектующие к ПК. На заказ ответили довольно быстро, подтвердили и сказали, что будет доставлено через 3
-              </div>
-            </div>
-          </div>
-        </div>
-      </div><!-- End review -->
-
-      <div class="review">
-        <div class="corner"></div>
-        <div class="ava pull-left">
-          <img alt="140x140" class="img-circle" src="/assets/team/our-team03.jpg" data-holder-rendered="true" />
-        </div>
-        <div class="info pull-right">
-          <div class="clearfix">
-            <ul class="rate pull-left">
-              <li><a href="#"></a></li>
-              <li><a href="#"></a></li>
-              <li><a href="#"></a></li>
-              <li><a href="#"></a></li>
-              <li><a href="#"></a></li>
-            </ul>
-            <p class="calendar pull-right">05.03.2013 / 20:30</p>
-          </div>
-          <p><a href="#">Михайло Бальзаминов</a></p>
-          <p>опубликовал свой первый отзыв</p>
-          <p>о <a href="#">www.trud.dp.ua</a></p>
-        </div>
-        <div class="clearfix"></div>
-        <div class="message_panel">
-          <div class="corner"></div>
-          <div class="message">
-            <div class="panel panel-default">
-              <div class="panel-body">
-                Заказывал комплектующие к ПК. На заказ ответили довольно быстро, подтвердили и сказали, что будет доставлено через 3
-              </div>
-            </div>
-          </div>
-        </div>
-      </div><!-- End review -->
-
-      <div class="review">
-        <div class="corner"></div>
-        <div class="ava pull-left">
-          <img alt="140x140" class="img-circle" src="/assets/team/our-team01.jpg" data-holder-rendered="true" />
-        </div>
-        <div class="info pull-right">
-          <div class="clearfix">
-            <ul class="rate pull-left">
-              <li><a href="#"></a></li>
-              <li><a href="#"></a></li>
-              <li><a href="#"></a></li>
-              <li><a href="#"></a></li>
-              <li><a href="#"></a></li>
-            </ul>
-            <p class="calendar pull-right">05.03.2013 / 20:30</p>
-          </div>
-          <p><a href="#">Михайло Бальзаминов</a></p>
-          <p>опубликовал свой первый отзыв</p>
-          <p>о <a href="#">www.trud.dp.ua</a></p>
-        </div>
-        <div class="clearfix"></div>
-        <div class="message_panel">
-          <div class="corner"></div>
-          <div class="message">
-            <div class="panel panel-default">
-              <div class="panel-body">
-                Заказывал комплектующие к ПК. На заказ ответили довольно быстро, подтвердили и сказали, что будет доставлено через 3
-              </div>
-            </div>
-          </div>
-        </div>
-      </div><!-- End review -->
-
-      <div class="review">
-        <div class="corner"></div>
-        <div class="ava pull-left">
-          <img alt="140x140" class="img-circle" src="/assets/team/our-team04.jpg" data-holder-rendered="true" />
-        </div>
-        <div class="info pull-right">
-          <div class="clearfix">
-            <ul class="rate pull-left">
-              <li><a href="#"></a></li>
-              <li><a href="#"></a></li>
-              <li><a href="#"></a></li>
-              <li><a href="#"></a></li>
-              <li><a href="#"></a></li>
-            </ul>
-            <p class="calendar pull-right">05.03.2013 / 20:30</p>
-          </div>
-          <p><a href="#">Михайло Бальзаминов</a></p>
-          <p>опубликовал свой первый отзыв</p>
-          <p>о <a href="#">www.trud.dp.ua</a></p>
-        </div>
-        <div class="clearfix"></div>
-        <div class="message_panel">
-          <div class="corner"></div>
-          <div class="message">
-            <div class="panel panel-default">
-              <div class="panel-body">
-                Заказывал комплектующие к ПК. На заказ ответили довольно быстро, подтвердили и сказали, что будет доставлено через 3
-              </div>
-            </div>
-          </div>
-        </div>
-      </div><!-- End review -->
+        <% @latest_reviews.each do |review| %>
+            <%= render 'shared/review/latest_review', :review => review %>
+        <% end %>
     </div>
   </div><!-- left column -->
 

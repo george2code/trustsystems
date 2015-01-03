@@ -31,6 +31,8 @@ gem 'devise'
 gem 'friendly_id'
 gem 'simple_form'
 
+gem 'faker'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

@@ -1,20 +1,21 @@
+<% @company.reviews.each do |review| %>
+
+    <% @user = User.find(review.user_id) %>
 <div class="review">
   <div class="row">
     <div class="col-md-2 ava text-center">
-      <img alt="140x140" class="img-circle" src="/assets/team/our-team02.jpg" data-holder-rendered="true" />
+      <img alt="140x140" class="img-circle" src="<%= User.find(review.user_id).avatar %>" data-holder-rendered="true" />
     </div>
     <div class="col-md-10 info">
       <div class="clearfix">
         <ul class="rate pull-left">
-          <li><a href="#"></a></li>
-          <li><a href="#"></a></li>
-          <li><a href="#"></a></li>
-          <li><a href="#"></a></li>
-          <li><a href="#"></a></li>
+          <% review.rating.times do %>
+            <li><a href="#"></a></li>
+          <% end %>
         </ul>
-        <p  class="calendar pull-right">05.03.2013 / 20:30</p>
+        <p  class="calendar pull-right"><%= review.updated_at.strftime("%d.%m.%Y / %H:%M") %></p>
       </div>
-      <p><a href="#">Михайло Бальзаминов</a> | 1 отзыв</p>
+      <p><a href="#"><%= @user.full_name %></a> | <%= @user.reviews.count %> отзыв(ов)</p>
       <div class="check confirm">Отзыв от подтвержденного покупателя</div>
     </div>
   </div>
@@ -25,10 +26,8 @@
     <div class="message">
       <div class="panel panel-default">
         <div class="panel-body">
-          <h5>Только положительные впечателния</h5>
-          Заказывал комплектующие к ПК. На заказ ответили довольно быстро, подтвердили и сказали, что будет
-          доставлено через 3 дня. Первый и единственный косяк был в том, что доставляли целую неделю.
-          Если связывался с кол-центром - всегда помогут.
+          <h5><%= review.review_short %></h5>
+          <%= review.review_full %>
         </div>
       </div>
 
@@ -47,3 +46,5 @@
     </div><!-- End review -->
   </div>
 </div>
+
+<% end %>

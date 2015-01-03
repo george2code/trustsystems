@@ -1,0 +1,34 @@
+<% @user = User.find(review.user_id) %>
+<% @company = Company.find(review.company_id) %>
+
+<div class="review">
+    <div class="ava pull-left">
+        <img alt="140x140" class="img-circle"
+             src="<%= User.find(review.user_id).avatar %>"
+             data-holder-rendered="true" />
+    </div>
+    <div class="info pull-right">
+        <div class="clearfix">
+          <ul class="rate pull-left">
+            <% review.rating.times do %>
+                <li><a href="#"></a></li>
+            <% end %>
+          </ul>
+          <p  class="calendar pull-right"><%= review.updated_at.strftime("%d.%m.%Y / %H:%M") %></p>
+        </div>
+        <p><a href="/users/<%= @user.id %>"><%= @user.full_name %></a></p>
+        <p>has been published <%= Review.where(user_id: review.user_id, company_id: review.company_id).count %> review(s)</p>
+        <p>about <a href="/companies/<%= @company.slug %>"><%= @company.name %></a></p>
+    </div>
+    <div class="clearfix"></div>
+    <div class="message_panel">
+        <div class="corner"></div>
+        <div class="message">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <%= review.review_full %>
+            </div>
+          </div>
+        </div>
+    </div>
+</div><!-- End review -->

@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+
+  get 'about' => 'pages#about'
+  get 'faq' => 'pages#faq'
+  get 'contacts' => 'pages#contacts'
+  get 'blog' => 'pages#blog'
+  get 'conditions' => 'pages#conditions'
+  get 'confidentalpolitic' => 'pages#confidentalpolitic'
+  get 'solutionsbusiness' => 'pages#solutionsbusiness'
+
   resources :companies
 
   resources :subcategories
@@ -23,6 +32,9 @@ Rails.application.routes.draw do
 
   get 'categories' => 'home#categorylist'
   get 'categories/:id' => 'home#categorylist'
+
+  get 'users' => 'home#user'
+  get 'users/:id' => 'home#user'
 
   get 'companies/:slug' => 'companies#show'
 

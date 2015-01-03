@@ -129,7 +129,7 @@ h3, h4 { color: #717171;}
 
 .top-login-links {margin: 8px 0 0 0;}
 .top-login-links li {float: left; margin-left: 10px;}
-.top-login-links li a {text-decoration: none;}
+.top-login-links li a {text-decoration: none; color: #fff;}
 
 
 /* Main sidebar */
@@ -168,6 +168,12 @@ h3, h4 { color: #717171;}
 
 .review .message { color: #7d7d7d; background: url("/assets/line1.png") repeat-x 0 bottom;padding-bottom: 5px; }
 .review .message .panel {background-color: #f9faf9;margin-bottom: 15px;}
+
+
+.latest-reviews .review ul.rate {margin-top: 0; margin-right: 10px; width: 125px;}
+.latest-reviews .review .info {
+    max-width: 265px;}
+
 /* Main sidebar END */
 
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141229101714) do
+ActiveRecord::Schema.define(version: 20141229182500) do
 
   create_table "companies", force: true do |t|
     t.string   "name",        null: false
@@ -49,6 +49,40 @@ ActiveRecord::Schema.define(version: 20141229101714) do
   add_index "company_categories", ["company_id"], name: "index_company_categories_on_company_id"
   add_index "company_categories", ["subcategory_id"], name: "index_company_categories_on_subcategory_id"
 
+  create_table "review_comments", force: true do |t|
+    t.integer  "review_id"
+    t.integer  "user_id"
+    t.text     "comment",    null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "review_comments", ["review_id"], name: "index_review_comments_on_review_id"
+
+  create_table "review_usefulls", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "review_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "review_usefulls", ["review_id"], name: "index_review_usefulls_on_review_id"
+
+  create_table "reviews", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "company_id"
+    t.integer  "rating"
+    t.string   "order_id"
+    t.string   "review_short", null: false
+    t.text     "review_full",  null: false
+    t.boolean  "is_confirmed"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "reviews", ["company_id"], name: "index_reviews_on_company_id"
+  add_index "reviews", ["user_id"], name: "index_reviews_on_user_id"
+
   create_table "root_categories", force: true do |t|
     t.string   "name",       null: false
     t.string   "slug",       null: false
@@ -81,6 +115,14 @@ ActiveRecord::Schema.define(version: 20141229101714) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "avatar"
+    t.boolean  "verified"
+    t.integer  "country_id"
+    t.integer  "city_id"
+    t.date     "birth_date"
+    t.text     "about"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

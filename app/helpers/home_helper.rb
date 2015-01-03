@@ -37,8 +37,6 @@ module HomeHelper
   def sub_categories(root_category)
     content = ''
 
-    # content += root_category.subcategories.all.count.to_s
-
     root_category.subcategories.all.each do |category|
       company_index = 1
 

@@ -47,25 +47,20 @@
 
     <div class="row">
         <div class="review_list">
-          <div class="review-header clearfix">
-            <h5 class="pull-left">Отзывы (214)</h5>
-          </div>
+            <div class="review-header clearfix">
+                <h5 class="pull-left">Отзывы (<%= @company.reviews.count %>)</h5>
+            </div>
 
-            <% 5.times do %>
                 <%= render 'companies/company_review' %>
-            <% end %>
 
-          <div class="row text-center">
-            <a href="#" class="btn btn-warning">Показать больше компаний</a>
-            <br />
-          </div>
-
+            <div class="row text-center">
+                <a href="#" class="btn btn-warning">Показать больше компаний</a>
+                <br />
+            </div>
         </div>
     </div>
-
-
-
   </div>
+
 
 
   <div class="col-md-4 sidebar-company">
@@ -82,7 +77,7 @@
       <h3>О <%= @company.name %></h3>
       <p><%= @company.description %></p>
       <p>
-        <a href="#" class="btn_orange btn btn-warning" target="_blank">Посетить <%= @company.name %></a>
+        <a href="#" class="btn_orange btn btn-warning" target="_blank">Посетить сайт компании</a>
       </p>
       <p>Делитесь мнениями. Расскажите друзьям, где совершать покупки. Поделиться значит позаботиться!</p>
       <div class="share">
@@ -108,38 +103,16 @@
     <div class="company_categories mb30">
         <h4>Категории</h4>
         <table class="table table-striped">
-          <tr>
-            <td class="name"><%= @company.name %> оценена<br />
-              в категории <a href="#">For companies</a>
-            </td>
-            <td class="marked">
-              <strong>1</strong> из <strong>4</strong>
-            </td>
-          </tr>
-          <tr>
-            <td class="name">The Logo Company оценена<br />
-              в категории <a href="#">For companies</a>
-            </td>
-            <td class="marked">
-              1 из 4
-            </td>
-          </tr>
-          <tr>
-            <td class="name">The Logo Company оценена<br />
-              в категории <a href="#">For companies</a>
-            </td>
-            <td class="marked">
-              1 из 4
-            </td>
-          </tr>
-          <tr>
-            <td class="name">The Logo Company оценена<br />
-              в категории <a href="#">For companies</a>
-            </td>
-            <td class="marked">
-              1 из 4
-            </td>
-          </tr>
+          <% 4.times do %>
+              <tr>
+                <td class="name"><%= @company.name %> оценена<br />
+                  в категории <a href="#">For companies</a>
+                </td>
+                <td class="marked">
+                  <strong>1</strong> из <strong>4</strong>
+                </td>
+              </tr>
+          <% end %>
         </table>
     </div>
 
