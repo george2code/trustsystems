@@ -210,7 +210,7 @@ h3, h4 { color: #717171;}
 .tags {background: url("/assets/line1.png") repeat-x 0 top; padding-top: 15px;}
 .tag-list a { text-decoration: none;}
 
-
+ul.pagination {margin: 40px 0 0 0;}
 
 
 footer {

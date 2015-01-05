@@ -57,6 +57,8 @@
         <% end %>
     </div><!-- review list -->
 
+    <%= will_paginate @reviews, renderer: BootstrapPagination::Rails %>
+
   </div>
 
 
