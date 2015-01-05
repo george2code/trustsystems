@@ -1,0 +1,39 @@
+<% @user = User.find(review.user_id) %>
+<% @company = Company.find(review.company_id) %>
+
+<h3>Сегодня самый обсуждаемый отзыв дня о <%= @company.name %></h3>
+<div class="panel panel-default wbg-color">
+  <div class="panel-body">
+    <div class="main-review clearfix">
+      <div class="ava pull-left text-center">
+        <img alt="" class="img-circle" src="<%= @user.avatar %>" data-holder-rendered="true" />
+        <p>Рейтинг:</p>
+        <ul class="rate pull-left">
+          <% review.rating.times do %>
+              <li><a href="#"></a></li>
+          <% end %>
+        </ul>
+        <div class="clearfix"></div>
+        <p><img src="/assets/flag.png" alt="" /></p>
+      </div>
+      <div class="info pull-right">
+        <div class="clearfix">
+          <div class="pull-left">
+            <h3><%= @user.full_name %></h3>
+            <p>о <a href="/companies/<%= @company.slug %>"><%= @company.name %></a></p>
+          </div>
+          <div class="pull-right">
+            <p class="calendar pull-right"><%= review.updated_at.strftime("%d.%m.%Y / %H:%M") %></p>
+          </div>
+        </div>
+        <h4><%= review.review_short %></h4>
+        <p class="full-review"><%= review.review_full %></p>
+
+        <div class="buttons clearfix">
+          <button type="button" class="btn btn-default pull-left">Читать далее</button>
+          <a class="more pull-right" href="/reviews/<%= @user.id %>">Еще отзывы</a>
+        </div>
+      </div>
+    </div><!-- End main review -->
+  </div>
+</div>

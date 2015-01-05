@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  # Review pages
+  get 'reviews' => 'review#index'
+  get 'reviews/:id' => 'review#show'
+
+
+  # Footer links
   get 'about' => 'pages#about'
   get 'faq' => 'pages#faq'
   get 'contacts' => 'pages#contacts'
@@ -8,11 +14,13 @@ Rails.application.routes.draw do
   get 'confidentalpolitic' => 'pages#confidentalpolitic'
   get 'solutionsbusiness' => 'pages#solutionsbusiness'
 
+
   resources :companies
 
   resources :subcategories
 
   get 'home/index'
+  get 'home/top_categories'
 
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
@@ -38,7 +46,7 @@ Rails.application.routes.draw do
 
   get 'companies/:slug' => 'companies#show'
 
-  resources :subcategories
+
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'

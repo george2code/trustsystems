@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Trustsystems</title>
+      <title><%= full_title(yield(:title)) %></title>
       <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
       <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
       <%= csrf_meta_tags %>
@@ -46,8 +46,9 @@
         </nav>
 
         <div class="container">
-          <p class="notice"><%= notice %></p>
-          <p class="alert"><%= alert %></p>
+          <% flash.each do |message_type, message| %>
+              <div class="alert alert-<%= message_type %>"><%= message %></div>
+          <% end %>
 
           <!-- Example row of columns -->
           <%= yield %>

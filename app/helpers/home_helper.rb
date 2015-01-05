@@ -30,7 +30,7 @@ module HomeHelper
     end
 
     menu += '</ul>'
-    # <li class="active"><a href="#">Искусство <span class="badge">216</span></a></li>
+    return menu
   end
 
 
@@ -56,4 +56,17 @@ module HomeHelper
   end
 
 
+  def top_companies_by_category(category_id, is_top)
+    @category = Subcategory.find(category_id)
+
+    h = Hash.new
+    @category.companies.each do |company|
+      @avg_rate = company.reviews.average(:rating).round(1)
+      h.store(company, @avg_rate.to_s)
+    end
+
+    return is_top ?
+        Hash[h.sort_by{|k, v| v}.reverse] :
+        Hash[h.sort_by{|k, v| v}]
+  end
 end

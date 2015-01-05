@@ -28,13 +28,14 @@
     <div class="latest-reviews">
         <div class="review-header clearfix">
             <h5 class="pull-left">Люди пишут</h5>
-            <a class="list pull-right" href="#">списком</a>
+            <%= link_to 'списком', reviews_path, :class => 'list pull-right' %>
         </div>
         <% @latest_reviews.each do |review| %>
             <%= render 'shared/review/latest_review', :review => review %>
         <% end %>
     </div>
   </div><!-- left column -->
+
 
 
   <div class="col-md-8">
@@ -45,200 +46,13 @@
     <br />
 
     <div class="row">
-      <h3>Сегодня самый обсуждаемый отзыв дня о Розетке</h3>
-      <div class="panel panel-default wbg-color">
-        <div class="panel-body">
-          <div class="main-review clearfix">
-            <div class="ava pull-left text-center">
-              <img alt="" class="img-circle" src="/assets/team/our-team03.jpg" data-holder-rendered="true" />
-              <p>Рейтинг:</p>
-              <ul class="rate pull-left">
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
-              </ul>
-              <p><img src="/assets/flag.png" alt="" /></p>
-            </div>
-            <div class="info pull-right">
-              <div class="clearfix">
-                <div class="pull-left">
-                  <h3>Михайло Бальзаминов</h3>
-                  <p>о <a href="#">www.trud.dp.ua</a></p>
-                </div>
-                <div class="pull-right">
-                  <p class="calendar pull-right">05.03.2013 / 20:30</p>
-                </div>
-              </div>
-              <h4>Отличнейшие продукты по самым низким ценам в Украине</h4>
-              <p>
-                Заказывал комплектующие к ПК. На заказ ответили довольно быстро, подтвердили и сказали,
-                что будет доставлено через 3 дня. Первый и единственный косяк был в том, что доставляли целую неделю.
-                Если связывался с колл-центром - всегда помогали.
-              </p>
-
-              <div class="buttons clearfix">
-                <button type="button" class="btn btn-default pull-left">Читать далее</button>
-                <a class="more pull-right" href="#">Еще отзывы</a>
-              </div>
-            </div>
-          </div><!-- End main review -->
-        </div>
-      </div>
+        <%= render 'shared/review/review_of_the_day', :review => @day_review %>
     </div>
 
 
 
-    <div class="row main-stat">
-      <div class="col-md-6 best">
-        <div class="column-head">
-          <h3>Лучших сайтов в категории</h3>
-          <a href="#">Детские товары</a>
-        </div>
-
-
-        <table class="table table-striped">
-          <tbody>
-          <tr>
-            <td>1</td>
-            <td><a href="#">Silverimpressions</a></td>
-            <td class="mark">Otto</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td><a href="#">Myfavoritebabycarrier</a></td>
-            <td class="mark">Otto</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td><a href="#">Mastershoe-Myshu</a></td>
-            <td class="mark">Otto</td>
-          </tr>
-
-          <tr>
-            <td>4</td>
-            <td><a href="#">My Own Labels</a></td>
-            <td class="mark">Otto</td>
-          </tr>
-          <tr>
-            <td>5</td>
-            <td><a href="#">Creationwatches</a></td>
-            <td class="mark">Otto</td>
-          </tr>
-          <tr>
-            <td>6</td>
-            <td><a href="#">Silverimpressions</a></td>
-            <td class="mark">Otto</td>
-          </tr>
-          <tr>
-            <td>7</td>
-            <td><a href="#">Myfavoritebabycarrier</a></td>
-            <td class="mark">Otto</td>
-          </tr>
-          <tr>
-            <td>8</td>
-            <td><a href="#">Mastershoe-Myshu</a></td>
-            <td class="mark">Otto</td>
-          </tr>
-          <tr>
-            <td>9</td>
-            <td><a href="#">My Own Labels</a></td>
-            <td class="mark">Otto</td>
-          </tr>
-          <tr>
-            <td>10</td>
-            <td><a href="#">Creationwatches</a></td>
-            <td class="mark">Otto</td>
-          </tr>
-          </tbody>
-        </table>
-      </div><!-- left column -->
-
-
-      <div class="col-md-6 worse">
-        <div class="column-head">
-          <h3>Худших сайтов в категории</h3>
-          <a href="#">Детские товары</a>
-        </div>
-
-        <table class="table table-striped">
-          <tbody>
-          <tr>
-            <td>1</td>
-            <td><a href="#">Silverimpressions</a></td>
-            <td class="mark">Otto</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td><a href="#">Myfavoritebabycarrier</a></td>
-            <td class="mark">Otto</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td><a href="#">Mastershoe-Myshu</a></td>
-            <td class="mark">Otto</td>
-          </tr>
-
-          <tr>
-            <td>4</td>
-            <td><a href="#">My Own Labels</a></td>
-            <td class="mark">Otto</td>
-          </tr>
-          <tr>
-            <td>5</td>
-            <td><a href="#">Creationwatches</a></td>
-            <td class="mark">Otto</td>
-          </tr>
-          <tr>
-            <td>6</td>
-            <td><a href="#">Silverimpressions</a></td>
-            <td class="mark">Otto</td>
-          </tr>
-          <tr>
-            <td>7</td>
-            <td><a href="#">Myfavoritebabycarrier</a></td>
-            <td class="mark">Otto</td>
-          </tr>
-          <tr>
-            <td>8</td>
-            <td><a href="#">Mastershoe-Myshu</a></td>
-            <td class="mark">Otto</td>
-          </tr>
-          <tr>
-            <td>9</td>
-            <td><a href="#">My Own Labels</a></td>
-            <td class="mark">Otto</td>
-          </tr>
-          <tr>
-            <td>10</td>
-            <td><a href="#">Creationwatches</a></td>
-            <td class="mark">Otto</td>
-          </tr>
-          </tbody>
-        </table>
-      </div><!-- right column -->
-    </div>
-
-    <div class="row tags">
-      <div class="col-md-9 tag-list">
-        <ul class="nav nav-pills" role="tablist">
-          <li role="presentation" class="active"><a href="#">Детские товары <span class="badge">42</span></a></li>
-          <li role="presentation"><a href="#">Другие</a></li>
-          <li role="presentation"><a href="#">Спорт <span class="badge">3</span></a></li>
-          <li role="presentation"><a href="#">Электроника</a></li>
-          <li role="presentation"><a href="#">Транспорт</a></li>
-          <li role="presentation"><a href="#">Другие</a></li>
-          <li role="presentation"><a href="#">Авто</a></li>
-          <li role="presentation"><a href="#">Музыка</a></li>
-          <li role="presentation" class="active"><a href="#">Детские товары <span class="badge">42</span></a></li>
-        </ul>
-      </div>
-
-      <div class="col-md-3">
-        <a href="#" class="pull-right">Все категории</a>
-      </div>
-    </div>
+    <!-- Render TOP 10 Categories -->
+    <%= render 'top_categories', :categories => @top_categories %>
 
   </div>
 </div>

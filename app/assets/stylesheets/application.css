@@ -73,6 +73,7 @@ ul { list-style-type: none;overflow: hidden;padding: 0;}
 .wgreenbg-color { background-color: #f2fdda;border-color: #7fab2e;}
 
 h1 { color: #585858;}
+h1.title {margin: 1}
 h3, h4 { color: #717171;}
 
 .btn-orange {
@@ -83,6 +84,13 @@ h3, h4 { color: #717171;}
 }
 .btn-orange:hover {
     color: #fff;
+}
+
+
+.alert-alert {
+    background-color: #fcf8e3;
+    border-color: #fbeed5;
+    color: #c09853;
 }
 
 
@@ -186,6 +194,7 @@ h3, h4 { color: #717171;}
 .main-review .info { width: 72%;}
 .main-review .info h3 { color: #636363;margin: 10px 0 5px 0;}
 .main-review .info h4 { color: #525252;font-size: 16px;font-weight: bold;}
+.main-review .info .full-review {min-height: 90px;}
 .main-review .info .calendar { font-size: 11px;background: url("/assets/calendar_ico.png") no-repeat;height: 16px;padding-left: 20px;}
 .main-review .info .buttons { margin-top: 30px;}
 .main-review .info .buttons a.more { line-height: 30px;}

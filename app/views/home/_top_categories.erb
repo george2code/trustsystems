@@ -1,0 +1,88 @@
+<div class="row main-stat">
+  <div class="col-md-6 best">
+    <div class="column-head">
+      <h3>Лучших сайтов в категории</h3>
+      <a href="#" class="top_category_name">Детские товары</a>
+    </div>
+
+    <table class="table table-striped">
+      <tbody>
+      </tbody>
+    </table>
+  </div><!-- left column -->
+
+
+  <div class="col-md-6 worse">
+    <div class="column-head">
+      <h3>Худших сайтов в категории</h3>
+      <a href="#" class="top_category_name">Детские товары</a>
+    </div>
+
+    <table class="table table-striped">
+      <tbody>
+      </tbody>
+    </table>
+  </div><!-- right column -->
+</div>
+
+
+<div class="row tags">
+  <div class="col-md-9 tag-list">
+    <ul class="nav nav-pills" role="tablist">
+      <% categories.each_with_index do |category, i|  %>
+          <% if i == 0 %>
+              <li role="presentation" class="active">
+          <% else %>
+              <li role="presentation">
+          <% end %>
+
+            <a href="/categories/<%= category.id %>" data-value="<%= category.id %>"><%= category.name %> <span class="badge"><%= category.companies.count %></span></a>
+          </li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="col-md-3">
+    <%= link_to 'Все категории', categories_path, :class => 'pull-right' %>
+  </div>
+</div>
+
+
+
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+
+        $('.tag-list a').click(function(e) {
+            e.preventDefault();
+
+            // render category name and link
+            $("a.top_category_name").text($(this).clone().children().remove().end().text());
+            $("a.top_category_name").attr("href", $(this).attr("href"));
+
+            // get current category
+            var categoryId = $(this).attr('data-value');
+
+            // render top companies
+            $.ajax({
+                        url: "home/top_categories",
+                        type: "GET",
+                        dataType: 'json',
+                        data: {categoryId : categoryId}
+            }).done(function (data) {
+                if (data.length > 0)
+                {
+                    $(".best table tbody").html(data[0]);
+                    $(".worse table tbody").html(data[1]);
+                }
+            });
+
+            // change active category highlight
+            $(".tag-list li").removeClass("active");
+            $(this).parent().addClass("active");
+        });
+
+
+        $(".tag-list li:first-child a").click();
+    });
+</script>

@@ -1,0 +1,81 @@
+<% provide(:title, @user.full_name) %>
+
+<div class="row">
+  <div class="col-md-8">
+
+    <!-- User Information -->
+    <div class="panel panel-default wbg-color">
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-4 text-center">
+            <img alt="250x250" class="img-circle" src="<%= @user.avatar %>" data-holder-rendered="true" style="width: 220px; height: 220px;" />
+          </div>
+          <div class="col-md-8">
+            <h1 class="title">profile <%= @user.full_name %></h1>
+            <p><%= @user.birth_date %> | USA</p>
+            <p><%= @user.about %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <br />
+
+
+    <div class="review_list">
+      <% @reviews.each do |review| %>
+          <div class="review">
+            <div class="row">
+              <div class="col-md-2 ava text-center">
+                <img alt="140x140" class="img-circle" src="<%= @user.avatar %>" data-holder-rendered="true" />
+              </div>
+              <div class="col-md-10 info">
+                <div class="clearfix">
+                  <ul class="rate pull-left">
+                    <% review.rating.times do %>
+                        <li><a href="#"></a></li>
+                    <% end %>
+                  </ul>
+                  <p  class="calendar pull-right"><%= review.updated_at.strftime("%d.%m.%Y / %H:%M") %></p>
+                </div>
+                <p><a href="#"><%= @user.full_name %></a> | <%= @user.reviews.count %> отзыв(ов)</p>
+              </div>
+            </div>
+
+            <div class="clearfix"></div>
+            <div class="message_panel">
+              <div class="corner"></div>
+              <div class="message">
+                <div class="panel panel-default">
+                  <div class="panel-body">
+                    <h5><%= review.review_short %></h5>
+                    <%= review.review_full %>
+                  </div>
+                </div>
+
+                <div class="actions">
+                  <ul>
+                    <li><a href="javascript:void(0);">Комментарии (0)</a></li>
+                    <!--@if (Request.IsAuthenticated)-->
+                    <!--{-->
+                    <!--<li><div id="usefull"><a class="@(review.IsReviewUsefull ? "usefull" : string.Empty)" id="@review.Id" href="javascript:void(0);">Отметить как полезный</a></div></li>-->
+                    <li><div id="usefull"><a class="usefull" id="23" href="javascript:void(0);">Отметить как полезный</a></div></li>
+                    <!--}-->
+                    <li><a href="javascript:void(0);">Ответить как компания</a></li>
+                    <li><a href="javascript:void(0);">Пожаловаться</a></li>
+                  </ul>
+                </div>
+              </div><!-- End review -->
+            </div>
+          </div>
+      <% end %>
+    </div><!-- review list -->
+
+  </div>
+
+
+  <div class="col-md-4">
+    <%= render 'shared/review/review_sidebar' %>
+  </div>
+</div>
