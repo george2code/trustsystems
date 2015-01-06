@@ -28,6 +28,11 @@ body {
     padding-right: 15px;
 }
 
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+    background-color: #f8f8f8!important;
+    color: #555;
+}
+
 /* Set width on the form input elements since they're 100% wide by default */
 input,
 select,
@@ -92,8 +97,17 @@ h3, h4 { color: #717171;}
     border-color: #fbeed5;
     color: #c09853;
 }
+.alert-notice {
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #468847;
+}
 
-
+.user-welcome p {margin: 4px 0 3px 0; color: #fff;}
+.user-welcome {overflow: hidden; text-align: center;}
+.user-welcome ul {margin: 0;}
+.user-welcome li {float: left; margin-right: 10px; color: #fff; font-size: 10px;}
+.user-welcome a {color: #fff;}
 
 /* Progress bar */
 .progress {
@@ -236,7 +250,7 @@ footer .container a { color: #8a8a8a;text-decoration: none;font-size: 12px;}
 /* make sidebar nav vertical */
 @media (min-width: 768px) {
     .sidebar-nav .navbar .navbar-collapse {
-        padding: 0;
+        padding: 15px 0;
         max-height: none;
     }
     .sidebar-nav .navbar ul {
@@ -250,8 +264,8 @@ footer .container a { color: #8a8a8a;text-decoration: none;font-size: 12px;}
         display: block;
     }
     .sidebar-nav .navbar li a {
-        padding-top: 12px;
-        padding-bottom: 12px;
+        padding-top: 6px;
+        padding-bottom: 6px;
         text-decoration: none;
         font-weight: bold;
     }
@@ -320,3 +334,9 @@ footer .container a { color: #8a8a8a;text-decoration: none;font-size: 12px;}
     border-top-left-radius: 0;
     border-top-right-radius: 0;
 }
+
+
+.company-item {margin-bottom: 30px;}
+.company-item ul.rate { margin: 0 10px 0 0;}
+.company-item ul.rate li { float: left;margin-right: 3px;}
+.company-item ul.rate a { background: url("/assets/trust_star1.png") no-repeat;width: 22px;height: 22px;display: block;}

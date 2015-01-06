@@ -16,7 +16,7 @@
           </ul>
           <p  class="calendar pull-right"><%= review.updated_at.strftime("%d.%m.%Y / %H:%M") %></p>
         </div>
-        <p><a href="/users/<%= @user.id %>"><%= @user.full_name %></a></p>
+        <p><a href="/reviews/<%= @user.id %>"><%= @user.full_name %></a></p>
         <p>has been published <%= Review.where(user_id: review.user_id, company_id: review.company_id).count %> review(s)</p>
         <p>about <a href="/companies/<%= @company.slug %>"><%= @company.name %></a></p>
     </div>

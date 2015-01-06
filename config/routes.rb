@@ -31,6 +31,7 @@ Rails.application.routes.draw do
 
   devise_scope :user do
     get '/login' => 'devise/sessions#new'
+    get '/signup' => 'devise/registrations#new'
   end
 
   # resources :users
@@ -39,7 +40,7 @@ Rails.application.routes.draw do
 
 
   get 'categories' => 'home#categorylist'
-  get 'categories/:id' => 'home#categorylist'
+  get 'categories/:id' => 'home#categoryview'
 
   get 'users' => 'home#user'
   get 'users/:id' => 'home#user'

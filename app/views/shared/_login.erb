@@ -1,19 +1,26 @@
 <% if current_user.present? %>
 
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Категории</a></li>
+      <li class="active"><%= link_to 'Категории', categories_path %></li>
       <li><a href="#">Для компаний</a></li>
     </ul>
 
     <div class="navbar-right user-welcome">
-        <p>Welcome, <%= link_to current_user.email, user_path(current_user.id) %></p>
+        <p>Welcome, <%= link_to current_user.email, edit_user_registration_path(current_user.id) %></p>
+        <ul>
+          <li><a href="#">My Profile</a></li>
+          <li>|</li>
+          <li><a href="#">Account Settings</a></li>
+          <li>|</li>
+          <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+        </ul>
     </div>
 
 <% else %>
 
     <ul class="top-login-links navbar-right">
-      <li><%= link_to 'Login', new_user_session_path, class: "btn btn-success" %></li>
-      <li><%= link_to 'Sign Up', new_user_registration_path, class: "btn btn-danger" %></li>
+      <li><%= link_to 'Login', login_path, class: "btn btn-success" %></li>
+      <li><%= link_to 'Sign Up', signup_path, class: "btn btn-danger" %></li>
     </ul>
 
 <% end %>

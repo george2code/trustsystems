@@ -5,7 +5,7 @@ module HomeHelper
 
     root_categories.each do |root_category|
       # active element or not
-      if slug.nil? and slug == root_category.slug
+      if !slug.nil? and slug == root_category.slug
         menu += '<li class="active">'
       else
         menu += '<li>'
@@ -21,7 +21,12 @@ module HomeHelper
       if subcategory_list.count > 0
         menu += '<ul class="nav navbar-nav">'
         subcategory_list.each do |subItem|
-          menu += '<li><a href="/categories/' + subItem.slug + '">- ' + subItem.name + '</a></li>'
+          if !slug.nil? and slug == subItem.slug
+            menu += '<li class="active">'
+          else
+            menu += '<li>'
+          end
+          menu += '<a href="/categories/' + subItem.slug + '">- ' + subItem.name + '</a></li>'
         end
         menu += '</ul>'
       end

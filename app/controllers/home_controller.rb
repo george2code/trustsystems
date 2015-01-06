@@ -6,21 +6,41 @@ class HomeController < ApplicationController
   respond_to :html, :js
   include HomeHelper
 
+
   def index
     @latest_reviews = Review.limit(4).order('RANDOM()')
 
     #TODO Get review of the day. Don't know how to check it
     @day_review = Review.order('RANDOM()').first
 
-
     # Top 10 categories
     @top_categories = Subcategory.limit(8).order('RANDOM()')
-
   end
+
 
   def categorylist
     @root_categories = RootCategory.all
   end
+
+
+  def categoryview
+    @root_categories = RootCategory.all
+    @category = RootCategory.find_by_slug(params[:id])
+
+    if @category
+        @companies = Array.new
+        @category.subcategories.each do |subcategory|
+          subcategory.companies.each do |company|
+            @companies.push(company)
+          end
+        end
+    else
+      @category = Subcategory.find_by_slug(params[:id])
+      @companies = @category.companies
+    end
+
+  end
+
 
   def user
     if (params[:id])

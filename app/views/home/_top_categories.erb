@@ -36,7 +36,7 @@
               <li role="presentation">
           <% end %>
 
-            <a href="/categories/<%= category.id %>" data-value="<%= category.id %>"><%= category.name %> <span class="badge"><%= category.companies.count %></span></a>
+            <a href="/categories/<%= category.slug %>" data-value="<%= category.id %>"><%= category.name %> <span class="badge"><%= category.companies.count %></span></a>
           </li>
       <% end %>
     </ul>
@@ -52,7 +52,6 @@
 <script type="text/javascript">
     $(document).ready(function()
     {
-
         $('.tag-list a').click(function(e) {
             e.preventDefault();
 
