@@ -16,4 +16,9 @@ module BusinessHelper
     ''
   end
 
+  # Sub-menu class depends from Controller
+  def current_class_controller?(controller_name)
+    return 'active' if controller.controller_name == controller_name
+    ''
+  end
 end

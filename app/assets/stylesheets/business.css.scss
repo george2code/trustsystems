@@ -159,7 +159,8 @@ a, .nav a {text-decoration: none;}
 
 .top-navigation {margin: 15px 0 0 0;}
 .top-navigation li {float: left; margin-right: 15px;}
-.top-navigation li a {color: #fff;}
+.top-navigation li a {color: #fff; text-decoration: none;}
+.top-navigation li a.active {text-decoration: underline;}
 
 .sub-menu li a.active {
   background-color: #e7e7e7;

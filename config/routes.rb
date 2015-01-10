@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
+
+
   # Business pages
-
-
   get 'business' => 'business#index'
 
   scope '/business' do
@@ -11,6 +11,12 @@ Rails.application.routes.draw do
     get 'product/invite'
     get 'product/share'
     get 'product/services'
+
+    get 'resources' => 'resources#index'
+    get 'resources/experience'
+    get 'resources/brochure'
+    get 'resources/examples'
+    get 'resources/calculate'
   end
 
   # -----------------------------------

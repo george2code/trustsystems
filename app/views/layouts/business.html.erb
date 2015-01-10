@@ -39,7 +39,9 @@
                   </ul>
 
                   <ul class="top-navigation navbar-right">
-                    <li><%= link_to 'Product', product_path %></li>
+                    <li><%= link_to 'Home', business_path, :class => current_class?(business_path) %></li>
+                    <li><%= link_to 'Product', product_path, :class => current_class_controller?('product') %></li>
+                    <li><%= link_to 'Resources', resources_path, :class => current_class_controller?('resources') %></li>
                   </ul>
                 </div><!--/.navbar-collapse -->
               </div>

@@ -13,3 +13,20 @@
       </div>
     </nav>
 <% end %>
+
+
+<% if params[:controller] == 'resources' %>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid container">
+        <div id="bs-example-navbar-collapse-6" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><%= link_to 'All', resources_path, :class => current_class?(resources_path) %></li>
+            <li><%= link_to 'Examples', resources_examples_path, :class => current_class?(resources_examples_path) %></li>
+            <li><%= link_to 'Calculate sales growth', resources_calculate_path, :class => current_class?(resources_calculate_path) %></li>
+            <li><%= link_to 'Our experience creating invitations', resources_experience_path, :class => current_class?(resources_experience_path) %></li>
+            <li><%= link_to 'Brochure', resources_brochure_path, :class => current_class?(resources_brochure_path) %></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div>
+    </nav>
+<% end %>
