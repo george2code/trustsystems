@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Trustbusiness</title>
+      <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700italic,700'
+            rel='stylesheet'
+            type='text/css'>
+      <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+      <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+      <%= csrf_meta_tags %>
+      <style type="text/css">
+          .navbar-header .navbar-brand {
+              background: url("/assets/business/logo_business.png") no-repeat 0 center;
+              width: 215px;
+          }
+      </style>
+    </head>
+    <body>
+
+        <div id="wrap">
+          <div id="header">
+            <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+              <div class="container">
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                          aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" href="/business"></a>
+                </div>
+
+                <div id="navbar" class="navbar-collapse collapse">
+                  <ul class="top-login-links navbar-right">
+                    <li><%= link_to 'for Clients', root_path, class: 'btn btn-primary' %></li>
+                    <li><%= link_to 'Login', about_path, class: 'btn btn-warning' %></li>
+                  </ul>
+
+                  <ul class="top-navigation navbar-right">
+                    <li><%= link_to 'Product', product_path %></li>
+                  </ul>
+                </div><!--/.navbar-collapse -->
+              </div>
+            </nav>
+
+            <div class="sub-menu">
+              <%= render 'shared/business/submenu' %>
+            </div>
+          </div><!-- header -->
+
+
+          <div id="main">
+            <% flash.each do |message_type, message| %>
+                <div class="alert alert-<%= message_type %>"><%= message %></div>
+            <% end %>
+
+            <%= yield %>
+
+            <!-- Boxes -->
+            <div class="row">
+              <div class="col-md-6 request-orange">
+                <div class="col-md-5">
+                  <img src="/assets/business/rocket.png" class="pull-right" alt="" />
+                </div>
+                <div class="col-md-7">
+                  <h4>LET’S GET ROLLING...</h4>
+                  <p>...with a FREE trial</p>
+                  <ul><li>Invite up to 300 customers to rate you</li>
+                    <li>Monitor and respond to what they say</li>
+                    <li>Then show the results on your website!</li>
+                    <li>And watch your Google Seller Rating climb</li>
+                  </ul>
+                  <p><a rel="nofollow" class="btn btn-primary btn-lg" title="Get started" href="/signup">Sign Up</a></p>
+                </div>
+              </div>
+              <div class="col-md-6 boxes">
+                <div class="request-callback">
+                  <div class="col-md-2">
+                    <img src="/assets/business/tea-icon.png" class="pull-right" alt="" />
+                  </div>
+                  <div class="col-md-10">
+                    <h4>Request a call back</h4>
+                    <p>Sounds great, right? Then chat with one of our team members.</p>
+                    <p><a href="/get-started/request-callback" title="get started" class="btn btn-primary btn-lg">Request a call back</a></p>
+                  </div>
+                </div>
+                <div class="request-demo">
+                  <div class="col-md-2">
+                    <img src="/assets/business/control-stick.png" class="pull-right" alt="" />
+                  </div>
+                  <div class="col-md-10">
+                    <h4>Request a demo</h4>
+                    <p>Sit back and let us be the pilot (for a while, anyway).</p>
+                    <p><a href="/get-started/request-demo" title="get started" class="btn btn-primary btn-lg">Request a demo</a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div><!-- main -->
+        </div><!-- wrap -->
+
+        <footer id="footer" class="footer">
+          <div class="container">
+            <ul class="nav nav-pills">
+              <li role="presentation"><%= link_to 'About company', about_path %></li>
+              <li role="presentation"><%= link_to 'F.A.Q.', faq_path %></li>
+              <li role="presentation"><%= link_to 'Contacts', contacts_path %></li>
+              <li role="presentation"><%= link_to 'Blog', blog_path %></li>
+              <li role="presentation"><%= link_to 'Conditions', conditions_path %></li>
+              <li role="presentation"><%= link_to 'Confidential Politic', confidentalpolitic_path %></li>
+              <li role="presentation"><%= link_to 'Business Solutions', solutionsbusiness_path %></li>
+            </ul>
+          </div>
+        </footer>
+
+    </body>
+</html>

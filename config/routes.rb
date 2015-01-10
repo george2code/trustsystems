@@ -1,9 +1,25 @@
 Rails.application.routes.draw do
 
+  # Business pages
+
+
+  get 'business' => 'business#index'
+
+  scope '/business' do
+    get 'product' => 'product#index'
+    get 'product/collect'
+    get 'product/invite'
+    get 'product/share'
+    get 'product/services'
+  end
+
+  # -----------------------------------
+
   # Review pages
   get 'reviews' => 'review#index'
   get 'reviews/:id' => 'review#show'
 
+  # -----------------------------------
 
   # Footer links
   get 'about' => 'pages#about'
@@ -14,9 +30,9 @@ Rails.application.routes.draw do
   get 'confidentalpolitic' => 'pages#confidentalpolitic'
   get 'solutionsbusiness' => 'pages#solutionsbusiness'
 
+  # -----------------------------------
 
   resources :companies
-
   resources :subcategories
 
   get 'home/index'

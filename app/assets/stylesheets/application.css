@@ -77,8 +77,12 @@ ul { list-style-type: none;overflow: hidden;padding: 0;}
 .wbg-color { background-color: #f9faf9;}
 .wgreenbg-color { background-color: #f2fdda;border-color: #7fab2e;}
 
-h1 { color: #585858;}
-h1.title {margin: 1}
+h1 {
+    color: #555;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    margin: 20px 0;
+}
 h3, h4 { color: #717171;}
 
 .btn-orange {

@@ -1,0 +1,15 @@
+<% if params[:controller] == 'product' %>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid container">
+        <div id="bs-example-navbar-collapse-6" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><%= link_to 'Review', product_path, :class => current_class?(product_path) %></li>
+            <li><%= link_to 'Collect', product_collect_path, :class => current_class?(product_collect_path) %></li>
+            <li><%= link_to 'Invite', product_invite_path, :class => current_class?(product_invite_path) %></li>
+            <li><%= link_to 'Share', product_share_path, :class => current_class?(product_share_path) %></li>
+            <li><%= link_to 'Services & Support', product_services_url, :class => current_class?(product_services_url) %></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div>
+    </nav>
+<% end %>
