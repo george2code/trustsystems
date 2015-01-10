@@ -68,7 +68,7 @@ input[type="checkbox"].input-validation-error {
 a { color: #2981a4; text-decoration: underline; }
 a:hover { text-decoration: none;}
 
-a.btn {text-decoration: none;}
+a.btn {text-decoration: none; color: #fff!important;}
 
 ul { list-style-type: none;overflow: hidden;padding: 0;}
 

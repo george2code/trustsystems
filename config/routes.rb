@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   # Business pages
   get 'business' => 'business#index'
+  get 'business/pricing'
+  get 'business/why_us'
 
   scope '/business' do
     get 'product' => 'product#index'
