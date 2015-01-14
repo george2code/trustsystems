@@ -52,6 +52,7 @@ class HomeController < ApplicationController
 
   #Ajax GET
   def top_categories
+    # some comment, need to find TODO list
 
     category_id = params[:categoryId]
 

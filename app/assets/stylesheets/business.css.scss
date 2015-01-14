@@ -299,7 +299,8 @@ h3.green-badge {
 }
 .cnrflash-inner
 {
-  /*Set position, make larger then 			container and rotate 45 degrees*/
+  /*Set position, make larger then
+  container and rotate 45 degrees*/
   position: absolute;
   bottom: 0;
   right: 0;
@@ -320,7 +321,9 @@ h3.green-badge {
 }
 .cnrflash-inner:before, .cnrflash-inner:after
 {
-  /*Use the border triangle trick to make  				it look like the ribbon wraps round it's 				container*/
+  /*Use the border triangle trick to make
+  it look like the ribbon wraps round it's
+  container*/
   content: " ";
   display: block;
   position: absolute;
