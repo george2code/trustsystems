@@ -1,6 +1,6 @@
 class CreateCompanyCategories < ActiveRecord::Migration
   def change
-    drop_table :company_categories
+   # drop_table :company_categories
 
     create_table :company_categories do |t|
       t.belongs_to :subcategory, index: true
