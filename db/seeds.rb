@@ -9,18 +9,18 @@
 
 # create Users
 avatar_list = [
-     "our-team01.jpg",
-     "our-team02.jpg",
-     "our-team03.jpg",
-     "our-team04.jpg",
-     "our-team05.jpg",
-     "our-team06.jpg",
-     "our-team07.jpg",
-     "our-team08.jpg",
-     "our-team09.jpg",
-     "our-team10.jpg",
-     "our-team11.jpg",
-     "our-team12.jpg"
+     "team/our-team01.jpg",
+     "team/our-team02.jpg",
+     "team/our-team03.jpg",
+     "team/our-team04.jpg",
+     "team/our-team05.jpg",
+     "team/our-team06.jpg",
+     "team/our-team07.jpg",
+     "team/our-team08.jpg",
+     "team/our-team09.jpg",
+     "team/our-team10.jpg",
+     "team/our-team11.jpg",
+     "team/our-team12.jpg"
 ]
 
 User.create(
