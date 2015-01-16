@@ -2,6 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+.navbar-brand { background: asset-url("logo.png") no-repeat 0 center;}
+.search-panel { padding-bottom: 3px; background: asset-url("bg_subnav.jpg") left bottom repeat-x;}
+
+
 .social-icons-login a.vk { background: asset-url("icons/ico_login_vk.png") no-repeat center top; }
 .social-icons-login a.tw { background: asset-url("icons/ico_login_tw.png") no-repeat center top; }
 .social-icons-login a.fb { background: asset-url("icons/ico_login_fb.png") no-repeat center top; }
+
+footer .container {
+  padding-top: 25px;
+  background: asset-url("logo_ts_footer.png") no-repeat 30px 0;
+}
