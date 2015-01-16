@@ -11,6 +11,13 @@
 .social-icons-login a.tw { background: asset-url("icons/ico_login_tw.png") no-repeat center top; }
 .social-icons-login a.fb { background: asset-url("icons/ico_login_fb.png") no-repeat center top; }
 
+
+.best .column-head { background: asset-url("ten_best.png") no-repeat left center; }
+.worse .column-head { background: url("ten_worse.png") no-repeat left center; }
+.tags {background: asset-url("line1.png") repeat-x 0 top; padding-top: 15px; }
+
+
+
 footer .container {
   padding-top: 25px;
   background: asset-url("logo_ts_footer.png") no-repeat 30px 0;

@@ -1,3 +1,19 @@
 // Place all the styles related to the Review controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.review-header { background: asset-url("line1.png") repeat-x 0 bottom; }
+.review-header h5 { background: asset-url("co_people.png") no-repeat; padding-left: 40px; height: 22px; line-height: 24px; }
+
+.review .message_panel .corner {background-image: asset-url("review_triangle.png"); }
+
+.review .info ul.rate a { background: asset-url("trust_star1.png") no-repeat;width: 22px; height: 22px; display: block; }
+.review .info .calendar { font-size: 11px;background: asset-url("calendar_ico.png") no-repeat; height: 16px; padding-left: 20px; }
+.review .message { color: #7d7d7d; background: asset-url("line1.png") repeat-x 0 bottom; padding-bottom: 5px; }
+
+
+.main-review .ava ul.rate a { background: asset-url("trust_star1.png") no-repeat;width: 22px;height: 22px;display: block; }
+.main-review .info .calendar { font-size: 11px;background: asset-url("calendar_ico.png") no-repeat;height: 16px;padding-left: 20px; }
+
+.company-reviews ul.rate a { background: asset-url("trust_star1.png") no-repeat; }
+.company-reviews .review_from { background: asset-url("review/check.png") no-repeat; }
