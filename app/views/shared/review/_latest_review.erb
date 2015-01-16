@@ -4,7 +4,7 @@
 <div class="review">
     <div class="ava pull-left">
         <img alt="140x140" class="img-circle"
-             src="<%= User.find(review.user_id).avatar %>"
+             src="<%= asset_path User.find(review.user_id).avatar %>"
              data-holder-rendered="true" />
     </div>
     <div class="info pull-right">
