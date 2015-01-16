@@ -167,9 +167,6 @@ h3, h4 { color: #717171;}
 .social-icons-login { list-style-type: none;padding: 0;text-align: center;overflow: hidden;margin-left: 15px;}
 .social-icons-login li { float: left;margin: 0 15px;}
 .social-icons-login a { padding-top: 50px;display: block;width: 70px;font-size: 12px;}
-.social-icons-login a.vk { background: url("/assets/icons/ico_login_vk.png") no-repeat center top; }
-.social-icons-login a.tw { background: url("/assets/icons/ico_login_tw.png") no-repeat center top; }
-.social-icons-login a.fb { background: url("/assets/icons/ico_login_fb.png") no-repeat center top; }
 
 
 .review-header {background: url("/assets/line1.png") repeat-x 0 bottom;}
@@ -339,4 +336,4 @@ footer .container a { color: #8a8a8a;text-decoration: none;font-size: 12px;}
 .company-item {margin-bottom: 30px;}
 .company-item ul.rate { margin: 0 10px 0 0;}
 .company-item ul.rate li { float: left;margin-right: 3px;}
-.company-item ul.rate a { background: url("/assets/trust_star1.png") no-repeat;width: 22px;height: 22px;display: block;}
+.company-item ul.rate a {width: 22px;height: 22px;display: block;}

@@ -1,3 +1,7 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.social-icons-login a.vk { background: asset-url("icons/ico_login_vk.png") no-repeat center top; }
+.social-icons-login a.tw { background: asset-url("icons/ico_login_tw.png") no-repeat center top; }
+.social-icons-login a.fb { background: asset-url("icons/ico_login_fb.png") no-repeat center top; }
