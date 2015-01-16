@@ -12,10 +12,18 @@
 
 
 avatar_list = [
-     "/assets/team/our-team01.jpg",
-     "/assets/team/our-team02.jpg",
-     "/assets/team/our-team03.jpg",
-     "/assets/team/our-team04.jpg"
+     "team/our-team01.jpg",
+     "team/our-team02.jpg",
+     "team/our-team03.jpg",
+     "team/our-team04.jpg",
+     "team/our-team05.jpg",
+     "team/our-team06.jpg",
+     "team/our-team07.jpg",
+     "team/our-team08.jpg",
+     "team/our-team09.jpg",
+     "team/our-team10.jpg",
+     "team/our-team11.jpg",
+     "team/our-team12.jpg"
 ]
 
 User.create(
@@ -35,7 +43,7 @@ User.create(
         password: Faker::Internet.password(8),
         first_name: Faker::Name.first_name,
         last_name: Faker::Name.last_name,
-        avatar: avatar_list[rand(0..3)].to_s,
+        avatar: avatar_list[rand(0..11)].to_s,
         verified: false,
         birth_date: Faker::Date.between(40.years.ago, 19.years.ago),
         about: Faker::Lorem.sentence(3, true)

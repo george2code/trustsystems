@@ -4,7 +4,7 @@
 <div class="review">
   <div class="row">
     <div class="col-md-2 ava text-center">
-      <img alt="140x140" class="img-circle" src="<%= User.find(review.user_id).avatar %>" data-holder-rendered="true" />
+      <img alt="140x140" class="img-circle" src="<%= asset_path(User.find(review.user_id).avatar) %>" data-holder-rendered="true" />
     </div>
     <div class="col-md-10 info">
       <div class="clearfix">
