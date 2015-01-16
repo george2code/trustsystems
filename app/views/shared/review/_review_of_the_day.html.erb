@@ -6,7 +6,7 @@
   <div class="panel-body">
     <div class="main-review clearfix">
       <div class="ava pull-left text-center">
-        <img alt="" class="img-circle" src="<%= @user.avatar %>" data-holder-rendered="true" />
+        <img alt="" class="img-circle" src="<%= asset_path @user.avatar %>" data-holder-rendered="true" />
         <p>Рейтинг:</p>
         <ul class="rate pull-left">
           <% review.rating.times do %>
@@ -14,7 +14,7 @@
           <% end %>
         </ul>
         <div class="clearfix"></div>
-        <p><img src="/assets/flag.png" alt="" /></p>
+        <p><img src='<%= asset_path 'flag.png' %>' alt="" /></p>
       </div>
       <div class="info pull-right">
         <div class="clearfix">

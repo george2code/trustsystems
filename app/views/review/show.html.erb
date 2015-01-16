@@ -8,7 +8,7 @@
       <div class="panel-body">
         <div class="row">
           <div class="col-md-4 text-center">
-            <img alt="250x250" class="img-circle" src="<%= @user.avatar %>" data-holder-rendered="true" style="width: 220px; height: 220px;" />
+            <img alt="250x250" class="img-circle" src="<%= asset_path @user.avatar %>" data-holder-rendered="true" style="width: 220px; height: 220px;" />
           </div>
           <div class="col-md-8">
             <h1 class="title">profile <%= @user.full_name %></h1>
@@ -28,7 +28,7 @@
           <div class="review">
             <div class="row">
               <div class="col-md-2 ava text-center">
-                <img alt="140x140" class="img-circle" src="<%= @user.avatar %>" data-holder-rendered="true" />
+                <img alt="140x140" class="img-circle" src="<%= asset_path @user.avatar %>" data-holder-rendered="true" />
               </div>
               <div class="col-md-10 info">
                 <div class="clearfix">
