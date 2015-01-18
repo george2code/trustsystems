@@ -35,6 +35,11 @@ body {
     color: #555;
 }
 
+.navbar-inverse .navbar-nav li a.active {
+    background-color: #080808;
+    color: #fff;
+}
+
 /* Set width on the form input elements since they're 100% wide by default */
 input,
 select,
@@ -171,8 +176,8 @@ h3, h4 { color: #717171;}
 .pn-login-social h4 { font-size: 16px;margin: 0 0 20px 0;color: #414141;}
 .social-icons-login { list-style-type: none;padding: 0;text-align: center;overflow: hidden;margin-left: 15px;}
 .social-icons-login li { float: left;margin: 0 15px;}
-.social-icons-login a { padding-top: 50px;display: block;width: 70px;font-size: 12px;}
-
+.social-icons-login a { padding-top: 50px; display: block; width: 70px; font-size: 12px; text-decoration: none; outline: none;}
+.social-icons-login a:hover {color: #898989;}
 
 .review-header a.list { margin-top: 12px;}
 

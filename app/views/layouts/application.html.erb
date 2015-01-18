@@ -9,51 +9,59 @@
     </head>
     <body>
 
-        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                      aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="/"></a>
-            </div>
+        <div id="wrap">
+          <div id="header">
+            <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+              <div class="container">
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                          aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" href="/"></a>
+                </div>
 
-            <div id="navbar" class="navbar-collapse collapse">
-              <%= render "shared/login" %>
-            </div><!--/.navbar-collapse -->
-          </div>
-        </nav>
-
-
-        <nav class="navbar search-panel">
-          <div class="container">
-            <ul class="nav nav-pills pull-left">
-              <li role="presentation"><a href="#"><%= image_tag('ico_vk.jpg', :alt => 'Vkontakte') %></a></li>
-              <li role="presentation"><a href="#"><img src="<%= asset_path 'ico_fb.jpg' %>" alt="" /></a></li>
-              <li role="presentation"><a href="#"><img src="<%= asset_path 'ico_tw.jpg' %>" alt="" /></a></li>
-              <li role="presentation"><a href="#"><img src="<%= asset_path 'ico_gplus.jpg' %>" alt="" /></a></li>
-            </ul>
-            <form class="navbar-form navbar-right" role="search">
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search">
+                <div id="navbar" class="navbar-collapse collapse">
+                  <%= render "shared/login" %>
+                </div><!--/.navbar-collapse -->
               </div>
-              <button type="submit" class="btn btn-default">Submit</button>
-            </form>
-          </div>
-        </nav>
+            </nav>
 
-        <div class="container">
-          <% flash.each do |message_type, message| %>
-              <div class="alert alert-<%= message_type %>"><%= message %></div>
-          <% end %>
 
-          <!-- Example row of columns -->
-          <%= yield %>
-        </div> <!-- /container -->
+            <nav class="navbar search-panel">
+              <div class="container">
+                <ul class="nav nav-pills pull-left">
+                  <li role="presentation"><a href="#"><%= image_tag('ico_vk.jpg', :alt => 'Vkontakte') %></a></li>
+                  <li role="presentation"><a href="#"><img src="<%= asset_path 'ico_fb.jpg' %>" alt="" /></a></li>
+                  <li role="presentation"><a href="#"><img src="<%= asset_path 'ico_tw.jpg' %>" alt="" /></a></li>
+                  <li role="presentation"><a href="#"><img src="<%= asset_path 'ico_gplus.jpg' %>" alt="" /></a></li>
+                </ul>
+                <form class="navbar-form navbar-right" role="search">
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                  </div>
+                  <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+              </div>
+            </nav>
+          </div><!-- header -->
+<!--<%=  %>-->
+
+          <div id="main">
+            <div class="container">
+              <% flash.each do |message_type, message| %>
+                  <div class="alert alert-<%= message_type %>"><%= message %></div>
+              <% end %>
+
+              <!-- Example row of columns -->
+              <%= yield %>
+            </div> <!-- /container -->
+          </div><!-- main -->
+        </div><!-- wrap -->
+
 
         <footer class="footer">
           <div class="container">

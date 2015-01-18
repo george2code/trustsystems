@@ -1,8 +1,7 @@
 <% if current_user.present? %>
 
     <ul class="nav navbar-nav">
-      <li class="active"><%= link_to 'Категории', categories_path %></li>
-      <li><a href="#">Для компаний</a></li>
+      <li><%= link_to 'Категории', categories_path, :class => current_class?(categories_path) %></li>
     </ul>
 
     <div class="navbar-right user-welcome">
@@ -17,6 +16,11 @@
     </div>
 
 <% else %>
+
+    <ul class="nav navbar-nav">
+      <li><%= link_to 'Категории', categories_path, :class => current_class?(categories_path) %></li>
+      <li><%= link_to 'Для компаний', business_path %></li>
+    </ul>
 
     <ul class="top-login-links navbar-right">
       <li><%= link_to 'Login', login_path, class: "btn btn-success" %></li>
