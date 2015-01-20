@@ -60,6 +60,10 @@ a, .nav a {text-decoration: none;}
 .hp-tour-title p {color: #555; font-size: 18px;}
 
 
+.navbar-header .navbar-brand {
+  background: asset-url("business/logo_business.png") no-repeat 0 center;
+  width: 215px;
+}
 
 
 .home-circles {margin-bottom: 20px;}
@@ -69,8 +73,9 @@ a, .nav a {text-decoration: none;}
 
 
 .hp-spotlights {
-  background: url("/assets/business/home/in-the-spotlight.jpg") no-repeat scroll 0 0 / cover rgba(0, 0, 0, 0);
-  width: 100%;}
+  background: asset-url("business/home/in-the-spotlight.jpg") no-repeat scroll 0 0 / cover rgba(0, 0, 0, 0);
+  width: 100%;
+}
 .hp-spotlights .content {margin: 0 auto; max-width: 1200px; padding: 40px 2%;}
 .hp-spotlights h2 {font-size: 4.4em;}
 .hp-spotlights p {font-size: 18px;}
@@ -180,7 +185,7 @@ a, .nav a {text-decoration: none;}
   width: 320px;
 }
 .request-orange li {
-  background: url("/assets/business/trial-list-arrows.png") no-repeat scroll 0 3px rgba(0, 0, 0, 0);
+  background: asset-url("business/trial-list-arrows.png") no-repeat scroll 0 3px rgba(0, 0, 0, 0);
   color: #fff;
   font-family: "HelveticaNeueW01-65Medi";
   font-size: 19px;
@@ -218,7 +223,7 @@ a, .nav a {text-decoration: none;}
 
 
 h3.green-badge {
-  background: url('/assets/business/green-badge.png') no-repeat;
+  background: asset-url('business/green-badge.png') no-repeat;
   padding-left: 50px;
   line-height: 40px;
   height: 41px;

@@ -8,12 +8,6 @@
       <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
       <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
       <%= csrf_meta_tags %>
-      <style type="text/css">
-          .navbar-header .navbar-brand {
-              background: url("/assets/business/logo_business.png") no-repeat 0 center;
-              width: 215px;
-          }
-      </style>
     </head>
     <body>
 
@@ -67,6 +61,7 @@
               <div class="col-md-6 request-orange">
                 <div class="col-md-5">
                   <img src="/assets/business/rocket.png" class="pull-right" alt="" />
+                  <%= image_tag('business/rocket.png', :class => 'pull-right') %>
                 </div>
                 <div class="col-md-7">
                   <h4>LET’S GET ROLLING...</h4>
