@@ -60,7 +60,6 @@
             <div class="row">
               <div class="col-md-6 request-orange">
                 <div class="col-md-5">
-                  <img src="/assets/business/rocket.png" class="pull-right" alt="" />
                   <%= image_tag('business/rocket.png', :class => 'pull-right') %>
                 </div>
                 <div class="col-md-7">
@@ -77,7 +76,7 @@
               <div class="col-md-6 boxes">
                 <div class="request-callback">
                   <div class="col-md-2">
-                    <img src="/assets/business/tea-icon.png" class="pull-right" alt="" />
+                    <%= image_tag('business/tea-icon.png', :class => 'pull-right') %>
                   </div>
                   <div class="col-md-10">
                     <h4>Request a call back</h4>
@@ -87,7 +86,7 @@
                 </div>
                 <div class="request-demo">
                   <div class="col-md-2">
-                    <img src="/assets/business/control-stick.png" class="pull-right" alt="" />
+                    <%= image_tag('business/control-stick.png', :class => 'pull-right') %>
                   </div>
                   <div class="col-md-10">
                     <h4>Request a demo</h4>
@@ -101,19 +100,7 @@
           </div><!-- main -->
         </div><!-- wrap -->
 
-        <footer id="footer" class="footer">
-          <div class="container">
-            <ul class="nav nav-pills">
-              <li role="presentation"><%= link_to 'About company', about_path %></li>
-              <li role="presentation"><%= link_to 'F.A.Q.', faq_path %></li>
-              <li role="presentation"><%= link_to 'Contacts', contacts_path %></li>
-              <li role="presentation"><%= link_to 'Blog', blog_path %></li>
-              <li role="presentation"><%= link_to 'Conditions', conditions_path %></li>
-              <li role="presentation"><%= link_to 'Confidential Politic', confidentalpolitic_path %></li>
-              <li role="presentation"><%= link_to 'Business Solutions', solutionsbusiness_path %></li>
-            </ul>
-          </div>
-        </footer>
+        <%= render 'shared/footer' %>
 
     </body>
 </html>
