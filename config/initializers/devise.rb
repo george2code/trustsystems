@@ -4,7 +4,7 @@ Devise.setup do |config|
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
-  # config.secret_key = '62581e6ea4d35f895aa48e5b9e3dc9ea141e1b271de2fefef8e57d37cc08bb4985ee58e1b727798d1b7e2e538712a7951eafd5fb5b5ed1ddccaff49593ed5cb4'
+  config.secret_key = '62581e6ea4d35f895aa48e5b9e3dc9ea141e1b271de2fefef8e57d37cc08bb4985ee58e1b727798d1b7e2e538712a7951eafd5fb5b5ed1ddccaff49593ed5cb4'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -129,7 +129,7 @@ Devise.setup do |config|
   # config.remember_for = 2.weeks
 
   # Invalidates all the remember me tokens when the user signs out.
-  config.expire_all_remember_me_on_sign_out = true
+  # config.expire_all_remember_me_on_sign_out = true
 
   # If true, extends the user's remember period when remembered via cookie.
   # config.extend_remember_period = false
@@ -228,6 +228,10 @@ Devise.setup do |config|
 
   # The default HTTP method used to sign out a resource. Default is :delete.
   config.sign_out_via = :delete
+  require 'devise/orm/active_record'
+
+  config.sign_out_via = :get
+  config.omniauth :facebook, "1531468560459269", "9faab1819ea447b1e00c88ae9ba8b6c7"
 
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting

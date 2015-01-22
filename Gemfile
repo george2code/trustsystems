@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 ruby '2.1.3'
 
@@ -7,7 +7,7 @@ gem 'rails', '4.1.8'
 
 group :development, :test do
   gem 'sqlite3'
-  gem 'attr_reader :spec-rails', '2.13.1'
+  # gem 'attr_reader :spec-rails', '2.13.1'
 end
 group :production do
   gem 'pg', '0.15.1'
@@ -37,7 +37,13 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
-gem 'devise'
+
+gem 'devise', '~> 3.2.4'
+gem 'koala'
+gem 'omniauth'
+gem 'omniauth-oauth2'
+gem 'omniauth-facebook'
+
 
 gem 'friendly_id'
 gem 'simple_form'
