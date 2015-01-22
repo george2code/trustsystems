@@ -10,6 +10,16 @@ class User < ActiveRecord::Base
   has_many  :reviews
   has_many :authorizations
 
+  enum role: [:user, :client, :admin]
+  after_initialize :set_default_role, :if => :new_record?
+
+
+
+  # Functions
+
+  def set_default_role
+    self.role ||= :user
+  end
 
   def full_name
     first_name + ' ' + last_name
