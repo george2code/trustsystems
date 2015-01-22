@@ -17,8 +17,16 @@ class Authorization < ActiveRecord::Base
     self.save
   end
 
-  def fetch_details_from_twitter
 
+  def fetch_details_from_vkontakte
+    # graph = Koala::Vkontakte::API.new(self.token)
+    # facebook_data = graph.get_object("me")
+    # self.username = facebook_data['username']
+    # self.save
+  end
+
+
+  def fetch_details_from_twitter
   end
 
 

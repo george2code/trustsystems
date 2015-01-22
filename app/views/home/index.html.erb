@@ -6,18 +6,13 @@
         <h4>Присоеденяйтесь. Подключайтесь<br /> к нам через социальные сети</h4>
         <ul class="social-icons-login">
           <li>
-            <a href="#" class="vk">
-              Войти через "Вконтакте"
-            </a>
+            <%= link_to 'Войти через "Vkontakte"', user_omniauth_authorize_path(:vkontakte), :class => 'vk' %>
           </li>
           <li>
             <%= link_to 'Войти через "E-mail"', login_path, :class=>'ml' %>
           </li>
           <li>
-            <a href="#" class="fb">
-              Войти через "Facebook"
-            </a>
-            <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
+            <%= link_to 'Войти через "Facebook"', user_omniauth_authorize_path(:facebook), :class => 'fb' %>
           </li>
         </ul>
       </div>

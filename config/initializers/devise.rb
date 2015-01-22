@@ -231,7 +231,8 @@ Devise.setup do |config|
   require 'devise/orm/active_record'
 
   config.sign_out_via = :get
-  config.omniauth :facebook, "1531468560459269", "9faab1819ea447b1e00c88ae9ba8b6c7"
+  config.omniauth :facebook, '1531468560459269', '9faab1819ea447b1e00c88ae9ba8b6c7'
+  config.omniauth :vkontakte, '4743282', 'p4pu6fLJ7EsOx0K1LNLv', { :scope => 'email' }
 
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting

@@ -43,6 +43,7 @@ gem 'koala'
 gem 'omniauth'
 gem 'omniauth-oauth2'
 gem 'omniauth-facebook'
+gem 'omniauth-vkontakte'
 
 
 gem 'friendly_id'
