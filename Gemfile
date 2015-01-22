@@ -7,7 +7,7 @@ gem 'rails', '4.1.8'
 
 group :development, :test do
   gem 'sqlite3'
-  gem 'rspec-rails', '2.13.1'
+  gem 'attr_reader :spec-rails', '2.13.1'
 end
 group :production do
   gem 'pg', '0.15.1'
