@@ -1,0 +1,100 @@
+<% provide(:title, 'Rate company') %>
+
+<div class="row">
+  <div class="col-md-8">
+    <h1 class="title">Выскажите свое мнение! Поделитесь Вашим отзывом о <%= @company.name %> прямо сейчас. </h1>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-8">
+    <div class="evaluate">
+      <h3>Рейтинг</h3>
+
+      <%= form_for @review, :url => url_for(:controller => 'review', :action => 'rate') do |f| %>
+
+           <div class="row">
+            <div class="col-md-5">
+              <div class="star-rating clearfix">
+                <p tabindex="10" class="biz" id="starevaluationbutton">
+                  <a class="starbutton" tabindex="20" href="#"></a>
+                  <a class="starbutton" tabindex="21" href="#"></a>
+                  <a class="starbutton" tabindex="22" href="#"></a>
+                  <a class="starbutton" tabindex="23" href="#"></a>
+                  <a class="starbutton" tabindex="24" href="#"></a>
+                </p>
+              </div>
+            </div>
+            <div class="col-md-6 col-md-pull-1">
+              <p class="desc">Наведите курсор на звезды и нажмите, чтобы проголосовать</p>
+            </div>
+          </div><!-- rate stars -->
+
+          <div class="evaluate_form row">
+            <div class="col-md-12">
+
+              <% if @review.errors.any? %>
+                  <div id="error_explanation">
+                    <ul>
+                      <% @review.errors.full_messages.each do |message| %>
+                          <li><%= message %></li>
+                      <% end %>
+                    </ul>
+                  </div>
+              <% end %>
+
+              <%= f.hidden_field :rating, id: 'hfStars' %>
+
+              <%= f.label :order_id, 'Номер заказа:' %><br />
+              <%= f.text_field :order_id, class: 'form-control', placeholder: 'Если у Вас есть чер, введите номер.' %>
+
+              <%= f.label :review_short, 'Заголовок Вашего отзыва:' %><br />
+              <%= f.text_field :review_short, class: 'form-control', placeholder: 'Напишите ваше мнение одним предложением.' %>
+
+              <%= f.label :review_full, 'Ваш отзыв:' %><br />
+              <%= f.text_area :review_full, class: 'form-control', rows: 6,
+                              placeholder: 'Поделитесь вашим опытом и помогите другим сделать правильный выбор.' %>
+
+              <br />
+
+              <% if current_user.present? %>
+                  <%= f.submit 'Опубликовать Ваш отзыв', class: 'btn btn-primary btn-lg' %>
+              <% else %>
+                  <!-- Login section -->
+                  <div class="row">
+                    <div class="col-md-12">
+                      <p class="text-muted">* Вам необходимо залогиниться, чтобы оставить отзыв</p>
+                      <br />
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-3 text-center">
+                      <%= link_to 'Vkontakte', user_omniauth_authorize_path(:vkontakte), :class => 'btn btn-info btn-lg' %>
+                    </div>
+                    <div class="col-md-3 text-center">
+                      <%= link_to 'E-mail login', login_path, :class => 'btn btn-warning btn-lg' %>
+                    </div>
+                    <div class="col-md-3 text-center">
+                      <%= link_to 'Facebook', user_omniauth_authorize_path(:facebook), :class => 'btn btn-primary btn-lg' %>
+                    </div>
+                  </div>
+                  <!-- end Login section -->
+              <% end %>
+
+            </div>
+          </div><!-- evaluate_form -->
+
+      <% end  %>
+    </div>
+  </div>
+
+
+  <div class="col-md-4">
+    <h3 class="text-info">Что такое Trustpilot?</h3>
+    <p>Trustpilot это независимое сообщество отзывов. Мы помогаем потребителям по всему миру находить компании,
+      которым можно доверять.</p>
+    <h3 class="text-info">Делитесь вашими впечатлениями</h3>
+    <p>и будьте частью нашего сообщества. Нет ничего проще - с аккаунтом Trustpilot Вы можете писать, редактировать
+      и делиться отзывами в одном удобном месте.</p>
+  </div>
+</div>

@@ -334,3 +334,9 @@ footer .container a {
 .company-item ul.rate { margin: 0 10px 0 0;}
 .company-item ul.rate li { float: left;margin-right: 3px;}
 .company-item ul.rate a {width: 22px;height: 22px;display: block;}
+
+
+
+.field_with_errors { background: none; display: inline-block; width: 100%; }
+.field_with_errors label { color: red; }
+.field_with_errors input, .field_with_errors textarea { border-color: red; }

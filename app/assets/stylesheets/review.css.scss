@@ -17,3 +17,75 @@
 
 .company-reviews ul.rate a { background: asset-url("trust_star1.png") no-repeat; }
 .company-reviews .review_from { background: asset-url("review/check.png") no-repeat; }
+
+
+.evaluate h3 {margin-top: 0;}
+.evaluate_form {margin: 40px 0;}
+.evaluate_form .form-control {
+  max-width: 90%;}
+
+.evaluate input, textarea {margin-bottom: 20px;}
+
+.review-form .star-rating #starevaluationbutton {
+  float: left;
+  margin: 0;
+  width: 218px;
+}
+p.bia {
+  background: asset-url("review/sprite_stars_huge_old.png") no-repeat scroll 0 -50px rgba(0, 0, 0, 0);
+  display: block;
+  height: 36px;
+  width: 218px;
+}
+p.bic {
+  background: asset-url("review/sprite_stars_huge_old.png") no-repeat scroll 0 -100px rgba(0, 0, 0, 0);
+  display: block;
+  height: 36px;
+  width: 218px;
+}
+p.bie {
+  background: asset-url("review/sprite_stars_huge_old.png") no-repeat scroll 0 -150px rgba(0, 0, 0, 0);
+  display: block;
+  height: 36px;
+  width: 218px;
+}
+p.big {
+  background: asset-url("review/sprite_stars_huge_old.png")no-repeat scroll 0 -200px rgba(0, 0, 0, 0);
+  display: block;
+  height: 36px;
+  width: 218px;
+}
+p.bii {
+  background: asset-url("review/sprite_stars_huge_old.png") no-repeat scroll 0 -250px rgba(0, 0, 0, 0);
+  display: block;
+  height: 36px;
+  width: 218px;
+}
+p.biz {
+  background: asset-url("review/sprite_stars_huge_old.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+  display: block;
+  height: 36px;
+  width: 218px;
+}
+.starbutton {
+  cursor: pointer;
+  display: inline-block;
+  float: left;
+  height: 36px;
+  margin-right: 4px;
+  width: 36px;
+  outline: none;
+}
+.starbutton:hover {
+  background: none;
+}
+.star-rating .desc {
+  color: #666;
+  float: left;
+  font-size: 14px;
+  font-style: italic;
+  height: 70px;
+  line-height: 1.2em;
+  margin: 0;
+  width: 265px;
+}

@@ -26,6 +26,8 @@ Rails.application.routes.draw do
   # Review pages
   get 'reviews' => 'review#index'
   get 'reviews/:id' => 'review#show'
+  get 'reviews/rate/:slug' => 'review#rate'
+  post 'reviews/rate' => 'review#rate'
 
   # -----------------------------------
 
