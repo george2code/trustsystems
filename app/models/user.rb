@@ -58,10 +58,15 @@ class User < ActiveRecord::Base
         user.last_name = auth.info.last_name
         user.avatar = auth.info.image
         user.email = auth.info.email
-        auth.provider == 'twitter' ?  user.save(:validate => false) :  user.save
-
-        # TODO: if user has no avatar, should I take it from social network?
+      else
+        # TODO: if user has no avatar, firstname & lastname - fill it
+        user.first_name ||= auth.info.first_name
+        user.last_name ||= auth.info.last_name
+        user.avatar ||= auth.info.image
       end
+
+      auth.provider == 'twitter' ?  user.save(:validate => false) :  user.save
+
       # authorization.username = auth.info.nickname
       authorization.username = auth.info.email
       authorization.user_id = user.id
