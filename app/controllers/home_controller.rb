@@ -23,6 +23,13 @@ class HomeController < ApplicationController
   end
 
 
+  def search
+    query = params[:search]
+    @companies = Company.where("name like ?", "%#{query}%")
+    @query_string = query
+  end
+
+
   def categoryview
     @root_categories = RootCategory.all
     @category = RootCategory.find_by_slug(params[:id])
@@ -38,7 +45,6 @@ class HomeController < ApplicationController
       @category = Subcategory.find_by_slug(params[:id])
       @companies = @category.companies
     end
-
   end
 
 

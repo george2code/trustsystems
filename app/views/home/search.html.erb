@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-md-10 col-md-offset-1 categories search_result">
+    <h3>Результаты поиска для: '<%= @query_string %>'</h3>
+    <br />
+
+    <% @companies.each_with_index  do |company, i| %>
+        <div class="row">
+          <div class="col-md-12 company-item">
+            <p><strong><a href="/companies/<%= company.slug %>"><%= i+1 %>. <%= company.name %></a></strong></p>
+            <div class="clearfix">
+              <ul class="rate pull-left">
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+              </ul>
+              <p><%= company.reviews.count %> отзывов | Trustcore 7.4</p>
+            </div>
+            <% if company.reviews.exists? %>
+                <p><%= company.reviews.last.review_full %></p>
+            <% end %>
+          </div>
+        </div><!-- end row -->
+    <% end %>
+    <br />
+    <br />
+  </div>
+</div>

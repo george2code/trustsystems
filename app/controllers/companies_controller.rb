@@ -39,7 +39,6 @@ class CompaniesController < ApplicationController
 
   private
     def set_company
-      # @company = Company.find(params[:slug])
       @company = Company.find_by_slug(params[:id])
     end
 

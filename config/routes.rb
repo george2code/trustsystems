@@ -40,6 +40,7 @@ Rails.application.routes.draw do
   get 'confidentalpolitic' => 'pages#confidentalpolitic'
   get 'solutionsbusiness' => 'pages#solutionsbusiness'
 
+
   # -----------------------------------
 
   resources :companies
@@ -47,6 +48,9 @@ Rails.application.routes.draw do
 
   get 'home/index'
   get 'home/top_categories'
+
+  get 'search' => 'home#search'
+  post 'search' => 'home#search'
 
   devise_for :users, controllers: { omniauth_callbacks: 'omniauth_callbacks' }
   # The priority is based upon order of creation: first created -> highest priority.
