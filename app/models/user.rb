@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :omniauth_providers => [:facebook, :vkontakte]
 
-  validates_presence_of :email
+  validates_presence_of :email, :first_name, :last_name, :website
 
   has_many  :reviews
   has_many :authorizations

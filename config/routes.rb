@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'business/pricing'
   get 'business/why_us'
   get 'business/signup'
+  post 'business/signup'
   get 'business/login'
 
   scope '/business' do
