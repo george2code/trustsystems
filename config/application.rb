@@ -12,6 +12,7 @@ module Trustsystems
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
+    config.assets.paths << "#{Rails}/vendor/assets/fonts"
     config.serve_static_assets = true
     config.assets.compile = true
 

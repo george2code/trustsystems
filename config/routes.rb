@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get 'business' => 'business#index'
   get 'business/pricing'
   get 'business/why_us'
+  get 'business/signup'
+  get 'business/login'
 
   scope '/business' do
     get 'product' => 'product#index'

@@ -54,6 +54,12 @@ gem 'faker'
 gem 'will_paginate-bootstrap'
 
 
+
+gem 'countries'
+gem 'country_select'
+gem 'world-flags', '~> 0.6.5'
+
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

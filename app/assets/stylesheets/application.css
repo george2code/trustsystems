@@ -12,6 +12,10 @@
  *
  *= require_tree .
  *= require_self
+ *= require bootstrap
+ *= require flags/basic
+ *= require flags/flags16
+ *= require flags/flags32
  */
 
 body {
