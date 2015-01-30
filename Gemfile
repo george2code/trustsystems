@@ -59,6 +59,8 @@ gem 'countries'
 gem 'country_select'
 gem 'world-flags', '~> 0.6.5'
 
+gem 'bcrypt'
+
 
 
 # Use ActiveModel has_secure_password

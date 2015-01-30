@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Trustbusiness</title>
+      <title><%= full_title(yield(:title)) %></title>
       <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700italic,700'
             rel='stylesheet'
             type='text/css'>
@@ -83,7 +83,9 @@
                     <li>Then show the results on your website!</li>
                     <li>And watch your Google Seller Rating climb</li>
                   </ul>
-                  <p><a rel="nofollow" class="btn btn-primary btn-lg" title="Get started" href="/signup">Sign Up</a></p>
+                  <p>
+                    <%= link_to 'Sign Up', business_signup_path, :class => 'btn btn-primary btn-lg', :title => 'Get started'  %>
+                  </p>
                 </div>
               </div>
               <div class="col-md-6 boxes">

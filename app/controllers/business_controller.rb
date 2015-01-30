@@ -27,7 +27,34 @@ class BusinessController < ApplicationController
 
 
   def login
+    if request.post?
+      #handle posts
+      email = params[:user][:email]
+      password = params[:user][:password]
 
+      if email.nil? || email.empty?
+        flash[:danger] = 'Email cannot be blank. Please fill in all fields!'
+        render :action => :login
+      elsif password.nil? || password.empty?
+        flash[:danger] = 'Password cannot be blank. Please fill in all fields!'
+        render :action => :login
+      else
+        user = User.find_by(email: email)
+        if user.nil? == false && user.role == 1
+          if BCrypt::Password.new(user.encrypted_password).is_password? password
+            session[:user_id] = user.id
+            sign_in user
+              redirect_to business_path
+          else
+            flash[:danger] = 'User not exists! Please try again with different credentials'
+            render :action => :login
+          end
+        else
+          flash[:error] = 'There was an error logging in. Please check your email and password. And make sure that you role is Client.'
+          render :action => :login
+        end
+      end
+    end
   end
 
 

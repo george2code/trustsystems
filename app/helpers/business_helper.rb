@@ -2,7 +2,7 @@ module BusinessHelper
 
   # Returns the full title on a per-page basis.
   def full_title(page_title = '')
-    base_title = "TrustSystems"
+    base_title = "TrustBusiness"
     if page_title.empty?
       base_title
     else

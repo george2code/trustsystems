@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'business/signup'
   post 'business/signup'
   get 'business/login'
+  post 'business/login'
 
   scope '/business' do
     get 'product' => 'product#index'

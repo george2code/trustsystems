@@ -180,6 +180,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt
   coffee-rails (~> 4.0.0)
   countries
   country_select
