@@ -7,8 +7,6 @@ class User < ActiveRecord::Base
 
   validates_presence_of :email, :first_name, :last_name, :website
 
-  has_secure_password
-
   has_many  :reviews
   has_many :authorizations
 

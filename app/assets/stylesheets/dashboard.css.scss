@@ -1,0 +1,30 @@
+// Place all the styles related to the Dashboard controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.list-group a {text-decoration: none; line-height: 30px;}
+.list-group a span {font-size: 24px; float: left;}
+.list-group a span.glyphicon-chevron-right {font-size: 14px; float: none; margin-top: 5px;}
+
+.sidebar-nav li a {font-size: 18px;}
+
+.additional_info {padding: 40px 15px 20px;}
+.additional_info p {font-size: 12px;}
+
+
+
+.modules-menu a {text-decoration: none;}
+.modules-menu a:hover {color: red;}
+.modules-menu .glyphicon {font-size: 14px;}
+.modules-menu .well {min-height: 105px;}
+
+
+.review {margin: 10px 0; padding-bottom: 10px; border-bottom: 1px solid #e6e6e6;}
+.review .links {overflow: hidden;}
+.review .links li {float: left; margin-right: 20px;}
+.review a {text-decoration: none; color: #2981a4!important;}
+.review a:hover {background-color: #fff; color: red!important;}
+.review ul.rate {margin-bottom: 20px;}
+.review ul.rate li { float: left; margin-right: 3px;}
+.review ul.rate a { background: asset-url("trust_star1.png") no-repeat;width: 18px; height: 18px; display: block; }
+.review .review-date p {font-size: 12px;}

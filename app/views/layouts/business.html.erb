@@ -13,48 +13,48 @@
 
         <div id="wrap">
           <div id="header">
-            <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-              <div class="container">
-                <div class="navbar-header">
-                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                          aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                  </button>
-                  <a class="navbar-brand" href="/business"></a>
-                </div>
+                <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+                  <div class="container">
+                    <div class="navbar-header">
+                      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                              aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                      </button>
+                      <a class="navbar-brand" href="/business"></a>
+                    </div>
 
-                <div id="navbar" class="navbar-collapse collapse">
-                  <% if current_user.present? %>
-                      <div class="navbar-right user-welcome">
-                        <p>Welcome, <%= link_to current_user.email, edit_user_registration_path(current_user.id) %></p>
-                        <ul>
-                          <li><a href="#">My Profile</a></li>
-                          <li>|</li>
-                          <li><a href="#">Account Settings</a></li>
-                          <li>|</li>
-                          <li><%= link_to "Sign out", destroy_user_session_path, :method => :get %></li>
-                        </ul>
-                      </div>
-                  <% else %>
-                      <ul class="top-login-links navbar-right">
-                        <li><%= link_to 'for Clients', root_path, class: 'btn btn-primary' %></li>
-                        <li><%= link_to 'Login', about_path, class: 'btn btn-warning' %></li>
+                    <div id="navbar" class="navbar-collapse collapse">
+                      <% if current_user.present? %>
+                          <div class="navbar-right user-welcome">
+                            <p>Welcome, <%= link_to current_user.email, edit_user_registration_path(current_user.id) %></p>
+                            <ul>
+                              <li><a href="#">My Profile</a></li>
+                              <li>|</li>
+                              <li><a href="#">Account Settings</a></li>
+                              <li>|</li>
+                              <li><%= link_to "Sign out", destroy_user_session_path, :method => :get %></li>
+                            </ul>
+                          </div>
+                      <% else %>
+                          <ul class="top-login-links navbar-right">
+                            <li><%= link_to 'for Clients', root_path, class: 'btn btn-primary' %></li>
+                            <li><%= link_to 'Login', about_path, class: 'btn btn-warning' %></li>
+                          </ul>
+                      <% end %>
+
+                      <ul class="top-navigation navbar-right">
+                        <li><%= link_to 'Home', business_path, :class => current_class?(business_path) %></li>
+                        <li><%= link_to 'Product', product_path, :class => current_class_controller?('product') %></li>
+                        <li><%= link_to 'Pricing', business_pricing_path, :class => current_class?(business_pricing_path) %></li>
+                        <li><%= link_to 'Why Us', business_why_us_path, :class => current_class?(business_why_us_path) %></li>
+                        <li><%= link_to 'Resources', resources_path, :class => current_class_controller?('resources') %></li>
                       </ul>
-                  <% end %>
-
-                  <ul class="top-navigation navbar-right">
-                    <li><%= link_to 'Home', business_path, :class => current_class?(business_path) %></li>
-                    <li><%= link_to 'Product', product_path, :class => current_class_controller?('product') %></li>
-                    <li><%= link_to 'Pricing', business_pricing_path, :class => current_class?(business_pricing_path) %></li>
-                    <li><%= link_to 'Why Us', business_why_us_path, :class => current_class?(business_why_us_path) %></li>
-                    <li><%= link_to 'Resources', resources_path, :class => current_class_controller?('resources') %></li>
-                  </ul>
-                </div><!--/.navbar-collapse -->
-              </div>
-            </nav>
+                    </div><!--/.navbar-collapse -->
+                  </div>
+                </nav>
 
             <div class="sub-menu">
               <%= render 'shared/business/submenu' %>

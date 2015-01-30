@@ -61,6 +61,7 @@ class BusinessController < ApplicationController
   def why_us
   end
 
+
   def pricing
   end
 

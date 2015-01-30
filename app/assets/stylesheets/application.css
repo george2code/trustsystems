@@ -96,6 +96,10 @@ h1 {
 }
 h3, h4 { color: #717171;}
 
+h2.title {
+    font-family: "Roboto",sans-serif;
+    font-weight: 300;}
+
 .btn-orange {
     background-color: #eb751d;
     font-weight: bold;
@@ -111,6 +115,11 @@ h3, h4 { color: #717171;}
     background-color: #fcf8e3;
     border-color: #fbeed5;
     color: #c09853;
+}
+.alert-info {
+    color: #3a87ad;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
 }
 .alert-notice {
     background-color: #dff0d8;

@@ -141,4 +141,7 @@ $(document).ready(function () {
 
 
     // End review
+
+
+    $('.dropdown-toggle').dropdown();
 });

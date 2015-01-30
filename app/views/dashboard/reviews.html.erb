@@ -1,0 +1,82 @@
+<% provide(:title, 'Reviews') %>
+
+<h1>Reviews</h1>
+<br />
+
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button data-target="#bs-example-navbar-collapse-2" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+
+    <div id="bs-example-navbar-collapse-2" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav" style="overflow: visible;">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Find by <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">User Name</a></li>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Email address</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <form role="search" class="navbar-form navbar-left">
+        <div class="form-group">
+          <input type="text" placeholder="Search" class="form-control">
+        </div>
+        <button class="btn btn-default" type="submit">Filter items</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+<% @reviews.each do |review| %>
+    <% @user = User.find(review.user_id) %>
+<div class="row review">
+  <div class="col-md-2 text-center">
+    <ul class="rate pull-left">
+      <% review.rating.times do %>
+          <li><a href="#"></a></li>
+      <% end %>
+    </ul>
+    <div class="clearfix"></div>
+    <p><a href="/reviews/<%= @user.id %>"><%= @user.full_name %></a></p>
+  </div>
+  <div class="col-md-7">
+    <strong><%= review.review_short %></strong>
+    <p><%= review.review_full %></p>
+
+    <ul class="links">
+      <li><a href="#"><span class="glyphicon glyphicon-share"></span> Поделиться</a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-envelope"></span> Ответить</a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-flag"></span> Сообщить</a></li>
+    </ul>
+  </div>
+  <div class="col-md-3 review-date">
+    <p>
+      <%= review.updated_at.strftime("%A, %B %d, %Y") %><br />
+      Номер заказа: <%= review.id %><br />
+      Источник: Kickstart
+    </p>
+  </div>
+</div>
+<% end %>
+
+<div class="row">
+  <div class="col-md-12 text-center">
+    <h2 class="title">У вас нет отзывов!</h2>
+    <p>Пришло время пригласить еще клиентов оставить отзывы о вашей компании.</p>
+    <br />
+    <a href="#" class="btn btn-primary btn-lg">Получите новые отзывы</a>
+  </div>
+  <br />
+  <br />
+</div>

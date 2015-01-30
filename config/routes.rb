@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
 
 
+
+
   # Business pages
   get 'business' => 'business#index'
   get 'business/pricing'
@@ -23,6 +25,17 @@ Rails.application.routes.draw do
     get 'resources/brochure'
     get 'resources/examples'
     get 'resources/calculate'
+
+
+    #modules
+    get 'dashboard' => 'dashboard#index'
+
+    get 'modules' => 'dashboard#modules'
+    get 'modules/emailtemplate' => 'dashboard#email_template'
+
+
+    get 'reviews' => 'dashboard#reviews'
+
   end
 
   # -----------------------------------
