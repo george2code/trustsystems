@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
 
 
+
+
   # Business pages
   get 'business' => 'business#index'
   get 'business/pricing'
@@ -29,13 +31,16 @@ Rails.application.routes.draw do
 
     #modules
     get 'dashboard' => 'dashboard#index'
-
     get 'modules' => 'dashboard#modules'
     get 'modules/emailtemplate' => 'dashboard#email_template'
-
-
     get 'reviews' => 'dashboard#reviews'
 
+
+    #invitations
+    get 'invitations' => 'invitations#hystory'
+    get 'invitations/invite_customers'
+    get 'invitations/afs'
+    get 'invitations/settings'
   end
 
   # -----------------------------------

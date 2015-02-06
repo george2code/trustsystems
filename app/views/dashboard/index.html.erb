@@ -22,20 +22,30 @@
 
 <div class="row">
   <div class="list-group">
-    <a href="#" class="list-group-item">
-      <span class="glyphicon glyphicon-envelope"></span>&nbsp;&nbsp;It's time to invite some more customers <span class="glyphicon glyphicon-chevron-right pull-right"></span>
-    </a>
-    <a href="#" class="list-group-item">
-      <span class="glyphicon glyphicon-refresh"></span>&nbsp;&nbsp;Automatically invite new customers to write a review <span class="glyphicon glyphicon-chevron-right pull-right"></span>
-    </a>
-    <a href="#" class="list-group-item">
-      <span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp;Add a description to your company profile <span class="glyphicon glyphicon-chevron-right pull-right"></span>
-    </a>
-    <a href="#" class="list-group-item">
-      <span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;Get Trustpilot reviews on your Facebook Page <span class="glyphicon glyphicon-chevron-right pull-right"></span>
-    </a>
-    <a href="#" class="list-group-item">
-      <span class="glyphicon glyphicon-inbox"></span>&nbsp;&nbsp;Add a Facebook Fan Box to your company profile <span class="glyphicon glyphicon-chevron-right pull-right"></span>
-    </a>
+
+    <%= link_to invitations_invite_customers_path, :class => 'list-group-item' do %>
+        <span class="glyphicon glyphicon-envelope"></span>&nbsp;&nbsp;It's time to invite some more customers
+        <span class="glyphicon glyphicon-chevron-right pull-right"></span>
+    <% end %>
+
+    <%= link_to invitations_afs_path, :class => 'list-group-item' do %>
+        <span class="glyphicon glyphicon-refresh"></span>&nbsp;&nbsp;Automatically invite new customers to write a review
+        <span class="glyphicon glyphicon-chevron-right pull-right"></span>
+    <% end %>
+
+    <%= link_to invitations_invite_customers_path, :class => 'list-group-item' do %>
+        <span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp;Add a description to your company profile
+        <span class="glyphicon glyphicon-chevron-right pull-right"></span>
+    <% end %>
+
+    <%= link_to invitations_invite_customers_path, :class => 'list-group-item' do %>
+        <span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;Get Trustpilot reviews on your Facebook Page
+        <span class="glyphicon glyphicon-chevron-right pull-right"></span>
+    <% end %>
+
+    <%= link_to invitations_invite_customers_path, :class => 'list-group-item' do %>
+        <span class="glyphicon glyphicon-inbox"></span>&nbsp;&nbsp;Add a Facebook Fan Box to your company profile
+        <span class="glyphicon glyphicon-chevron-right pull-right"></span>
+    <% end %>
   </div>
 </div>
