@@ -44,6 +44,7 @@ gem 'omniauth'
 gem 'omniauth-oauth2'
 gem 'omniauth-facebook'
 gem 'omniauth-vkontakte'
+gem 'omniauth-google-oauth2'
 
 
 gem 'friendly_id'

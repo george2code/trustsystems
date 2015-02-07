@@ -9,7 +9,7 @@
             <%= link_to 'Войти через "Vkontakte"', user_omniauth_authorize_path(:vkontakte), :class => 'vk' %>
           </li>
           <li>
-            <%= link_to 'Войти через "E-mail"', login_path, :class=>'ml' %>
+            <%= link_to 'Войти через "Google+"', user_omniauth_authorize_path(:google_oauth2), :class=>'gl' %>
           </li>
           <li>
             <%= link_to 'Войти через "Facebook"', user_omniauth_authorize_path(:facebook), :class => 'fb' %>
