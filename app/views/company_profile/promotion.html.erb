@@ -1,0 +1,41 @@
+<% provide(:title, 'Promotion') %>
+
+<div class="row">
+  <div class="col-md-8">
+    <h1 class="title">Promotion Box</h1>
+    <p>Raise customer awareness about your company’s brand. Use the Promotion Box to deliver key brand messages,
+      eg. a commitment to customer service.</p>
+    <br />
+    <div class="panel panel-default">
+      <div class="panel-body box-lgray">
+        <form>
+          <label>Please add a title here:</label>
+          <input type="text" class="form-control" style="max-width: 340px;" placeholder="Eg. Company name and tagline" />
+          <br />
+          <label>Message headline:</label>
+          <input type="text" class="form-control" style="max-width: 340px;" placeholder="Eg. We're commited to our customers!" />
+          <br />
+          <label>Message details:</label>
+          <textarea class="form-control" rows="6" placeholder="Eg. We have a longstanding commitment to treat all customers the way we want to be treated - with respect, support and kindness."></textarea>
+          <br />
+          <div class="form-group">
+            <label for="exampleInputFile">Promotion picture</label>
+            <input type="file" id="exampleInputFile">
+            <p class="help-block">Recommended size 184 x 100px</p>
+          </div>
+          <br />
+          <input type="submit" value="Save Changes" class="btn btn-primary" />
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4 text-center">
+    <br />
+    <p><a href="#">View my profile page on TrustSystems.</a></p>
+    <br />
+    <img src="<%= image_path 'dashboard/promotion_box.jpg' %>" alt="" />
+  </div>
+</div>
+
+
+

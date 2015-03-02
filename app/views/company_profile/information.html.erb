@@ -1,0 +1,121 @@
+<% provide(:title, 'Сompany') %>
+
+<div class="row">
+  <div class="col-md-8">
+    <h1 class="title">Company Information</h1>
+    <p>Please fill out your company information.</p>
+    <br />
+    <div class="panel panel-default">
+      <div class="panel-body box-lgray">
+
+        <form>
+          <div class="form-group">
+            <h3>Your settings for your-shop.ru</h3>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Display Name:</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Please write your name">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Company Website:</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Please write your company website">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Country:</label>
+            <select class="form-control">
+              <option value="">Russian</option>
+              <option value="">English</option>
+            </select>
+          </div>
+
+
+          <br />
+
+
+          <div class="form-group">
+            <h3>Contact Information</h3>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Company Name:</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Please write your company name">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Email:</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Please write your email">
+          </div>
+
+          <div class="form-group">
+            <label for="exampleInputPassword1">Telephone:</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Please write your phone">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Street Address:</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Please write your street address">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Post-Zip Code:</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Please write your postal/zip code">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">City:</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Please write your city">
+          </div>
+
+          <div class="form-group">
+            <label for="exampleInputPassword1">Country:</label>
+            <select class="form-control">
+              <option value="">Russian</option>
+              <option value="">English</option>
+            </select>
+          </div>
+
+
+          <br />
+
+          <div class="form-group">
+            <h3>About Company</h3>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Headline:</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Please write a headline, e.g. name of your company">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Description:</label>
+            <textarea class="form-control" rows="8" id="exampleInputPassword1" placeholder="Please write down the company description you'd like displayed on your profile page."></textarea>
+          </div>
+
+          <br />
+
+          <div class="form-group">
+            <h3>Upload your profile image</h3>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputFile">Display a screenshot of your homepage</label>
+            <input type="file" id="exampleInputFile">
+            <p class="help-block">Example block-level help text here.</p>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputFile">Or upload a company image</label>
+            <input type="file" id="exampleInputFile">
+            <p class="help-block">Example block-level help text here.</p>
+          </div>
+
+          <br />
+          <input type="submit" class="btn btn-primary" value="Save changes" />
+        </form>
+
+
+
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4 text-center">
+    <br />
+    <p><a href="#">View my profile page on TrustSystems.</a></p>
+    <br />
+    <img src="<%= image_path 'dashboard/promotion_box.jpg' %>" alt="" />
+  </div>
+</div>
+
+
+

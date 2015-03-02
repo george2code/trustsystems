@@ -1,0 +1,41 @@
+<% provide(:title, 'Guarantee') %>
+
+<div class="row">
+  <div class="col-md-8">
+    <h1 class="title">Guarantee Box</h1>
+    <p>Free shipping? Hassle-free returns? If you have a service, that you can guarantee your customers,
+      here's the place to promote it.</p>
+    <br />
+    <div class="panel panel-default">
+      <div class="panel-body box-lgray">
+        <form>
+          <label>Write your headline here:</label>
+          <input type="text" class="form-control" style="max-width: 340px;" placeholder="Eg. Fast and free shipping!" />
+          <br />
+          <label>Write a teaser here:</label>
+          <input type="text" class="form-control" style="max-width: 340px;" placeholder="Eg. Free deliveries - in under five days." />
+          <br />
+          <label>Guarantee details:</label>
+          <textarea class="form-control" rows="6" placeholder="Eg. There are no shipping costs, and you'll recieve your package within five days of making your online purchase."></textarea>
+          <br />
+          <div class="form-group">
+            <label for="exampleInputFile">Picture</label>
+            <input type="file" id="exampleInputFile">
+            <p class="help-block">Recommended size 184 x 100px</p>
+          </div>
+          <br />
+          <input type="submit" value="Save and Publish" class="btn btn-primary" />
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4 text-center">
+    <br />
+    <p><a href="#">View my profile page on TrustSystems.</a></p>
+    <br />
+    <img src="<%= image_path 'dashboard/guide_guarantee.jpg' %>" alt="" />
+  </div>
+</div>
+
+
+

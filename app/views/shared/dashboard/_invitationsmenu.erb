@@ -1,0 +1,34 @@
+<% if params[:controller] == 'invitations' %>
+    <div class="sub-menu">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid container">
+        <div id="bs-example-navbar-collapse-6" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><%= link_to 'Invitation History', invitations_path, :class => current_class?(invitations_path) %></li>
+            <li><%= link_to 'Invite Customers', invitations_invite_customers_path, :class => current_class?(invitations_invite_customers_path) %></li>
+            <li><%= link_to 'Automatic Feedback Service', invitations_afs_path, :class => current_class?(invitations_afs_path) %></li>
+            <li><%= link_to 'Settings', invitations_settings_path, :class => current_class?(invitations_settings_path) %></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div>
+    </nav>
+    </div>
+<% end %>
+
+
+<% if params[:controller] == 'company_profile' %>
+    <div class="sub-menu">
+      <nav class="navbar navbar-default">
+        <div class="container-fluid container">
+          <div id="bs-example-navbar-collapse-6" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><%= link_to 'Company Information', company_profile_information_path, :class => current_class?(company_profile_information_path) %></li>
+              <li><%= link_to 'Promotion Box', company_profile_promotion_path, :class => current_class?(company_profile_promotion_path) %></li>
+              <li><%= link_to 'Guarantee Box', company_profile_guarantee_path, :class => current_class?(company_profile_guarantee_path) %></li>
+              <li><%= link_to 'Facebook Like Box', company_profile_facebook_path, :class => current_class?(company_profile_facebook_path) %></li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div>
+      </nav>
+    </div>
+<% end %>

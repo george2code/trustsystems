@@ -1,0 +1,29 @@
+<% provide(:title, 'Facebook') %>
+
+<div class="row">
+  <div class="col-md-8">
+    <h1 class="title">Facebook Like Box</h1>
+    <p>Do customers like you? Prove it! Boost customer confidence by implementing a Facebook Like
+      Box on your profile page.</p>
+    <br />
+    <div class="panel panel-default">
+      <div class="panel-body box-lgray">
+        <form>
+          <label>Insert your Facebook page URL or page ID.</label>
+          <input type="text" class="form-control" style="max-width: 340px;" placeholder="Eg. http://www.facebook.com/trustsystems" />
+          <br />
+          <input type="submit" value="Update" class="btn btn-primary" />
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4 text-center">
+    <br />
+    <p><a href="#">View my profile page on TrustSystems.</a></p>
+    <br />
+    <img src="<%= image_path 'dashboard/facebook_likebox.jpg' %>" alt="" />
+
+  </div>
+</div>
+
+

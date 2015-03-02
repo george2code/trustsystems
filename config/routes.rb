@@ -3,7 +3,10 @@ Rails.application.routes.draw do
 
 
 
-
+  get 'company_profile/information'
+  get 'company_profile/promotion'
+  get 'company_profile/guarantee'
+  get 'company_profile/facebook'
 
 
   # Business pages
@@ -31,9 +34,19 @@ Rails.application.routes.draw do
 
     #modules
     get 'dashboard' => 'dashboard#index'
+    scope '/dashboard' do
+      get 'notifications' => 'dashboard#notifications'
+      get 'account' => 'dashboard#account'
+    end
+
     get 'modules' => 'dashboard#modules'
-    get 'modules/emailtemplate' => 'dashboard#email_template'
+    scope '/modules' do
+      get 'emailtemplate' => 'dashboard#email_template'
+      get 'categories' => 'dashboard#categories'
+    end
     get 'reviews' => 'dashboard#reviews'
+    get 'statistics' => 'dashboard#statistics'
+    get 'usermanagement' => 'dashboard#user_management'
 
 
     #invitations
@@ -61,6 +74,7 @@ Rails.application.routes.draw do
   get 'conditions' => 'pages#conditions'
   get 'confidentalpolitic' => 'pages#confidentalpolitic'
   get 'solutionsbusiness' => 'pages#solutionsbusiness'
+  get 'guidelines' => 'pages#guidelines'
 
 
   # -----------------------------------

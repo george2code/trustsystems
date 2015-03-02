@@ -1,107 +1,82 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <title><%= full_title(yield(:title)) %></title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-
-  <!-- Le styles -->
-  <style type="text/css">
-      body {
-          padding-top: 70px;
-          padding-bottom: 40px;
-      }
-      .sidebar-nav {
-          padding: 9px 0;
-      }
-
-      @media (max-width: 980px) {
-          /* Enable use of floated navbar text */
-          .navbar-text.pull-right {
-              float: none;
-              padding-left: 5px;
-              padding-right: 5px;
+    <head>
+      <meta charset="utf-8">
+      <%= favicon_link_tag 'favicon.ico' %>
+      <title><%= full_title(yield(:title)) %></title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+      <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+      <%= csrf_meta_tags %>
+      <!-- Le styles -->
+      <style type="text/css">
+          body {
+              padding-top: 70px;
+              padding-bottom: 40px;
           }
-      }
-  </style>
-</head>
+          .sidebar-nav {
+              padding: 9px 0;
+          }
+          @media (max-width: 980px) {
+              /* Enable use of floated navbar text */
+              .navbar-text.pull-right {
+                  float: none;
+                  padding-left: 5px;
+                  padding-right: 5px;
+              }
+          }
+      </style>
+    </head>
 
-<body>
+    <body>
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                      aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="/business"></a>
+            </div>
 
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                  aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="/business"></a>
-        </div>
-
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="top-navigation navbar-right">
-            <li><%= link_to 'online-shop.ru', business_path, :class => current_class?(business_path) %></li>
-            <li class="vertical-divider">|</li>
-            <li><%= link_to 'John Doe', product_path, :class => current_class_controller?('product') %></li>
-            <li class="vertical-divider">|</li>
-            <li><%= link_to 'Notifications', business_pricing_path, :class => current_class?(business_pricing_path) %></li>
-            <li class="vertical-divider">|</li>
-            <li><%= link_to 'Sign out', destroy_user_session_path, :method => :get %></li>
-          </ul>
-        </div><!--/.navbar-collapse -->
-      </div>
-    </nav>
-
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="top-navigation navbar-right">
+                <li><%= link_to 'online-shop.ru', dashboard_path, :class => current_class?(dashboard_path) %></li>
+                <li class="vertical-divider">|</li>
+                <li><%= link_to 'John Doe', account_path, :class => current_class?(account_path) %></li>
+                <li class="vertical-divider">|</li>
+                <li><%= link_to 'Notifications', notifications_path, :class => current_class?(notifications_path) %></li>
+                <li class="vertical-divider">|</li>
+                <li><%= link_to 'Sign out', destroy_user_session_path, :method => :get %></li>
+              </ul>
+            </div><!--/.navbar-collapse -->
+          </div>
+        </nav>
 
 
-<div class="container">
-  <div class="row">
-    <div class="col-md-3">
-      <div class="well sidebar-nav">
-        <ul class="nav nav-pills nav-stacked" role="tablist">
-          <li role="presentation" class="active"><a href="/business/dashboard"><span class="glyphicon glyphicon-home"></span> Dashboard</a></li>
-          <li role="presentation"><a href="#"><span class="glyphicon glyphicon-envelope"></span> Invitations</a></li>
-          <li role="presentation"><a href="/business/modules"><span class="glyphicon glyphicon-th"></span> Modules</a></li>
-          <li role="presentation"><a href="/business/reviews"><span class="glyphicon glyphicon-star-empty"></span> Reviews</a></li>
-          <li role="presentation"><a href="#"><span class="glyphicon glyphicon-cog"></span> Integrations</a></li>
-          <li role="presentation"><a href="#"><span class="glyphicon glyphicon-align-left"></span> Statistics</a></li>
-          <li role="presentation"><a href="#"><span class="glyphicon glyphicon-comment"></span> Iformation</a></li>
-        </ul>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-3">
+                <%= render 'shared/dashboard/sidebar' %>
+            </div><!--/span-->
 
-        <div class="additional_info">
-          <p><a href="#">Войти на публичный профиль</a></p>
-          <p>Статус: <strong>Partner</strong><br />
-            Подписка истекает: 09.06.2015</p>
-          <h4>Задать вопрос Службе Поддержки</h4>
-          <p>Наша дружелюбная Служба Поддержки клиентов всегда рада помочь Вам. Отправьте им e-mail или свяжитесь
-            по указанному ниже телефону.</p>
-          <h5>
-            UK 0800 068-0435<br />
-            US 877 941-0960
-          </h5>
-        </div>
-      </div><!--/.well -->
-    </div><!--/span-->
+            <div class="col-md-9">
+              <div class="container">
 
-    <div class="col-md-9">
-      <div class="container">
-        <% flash.each do |message_type, message| %>
-            <div class="alert alert-<%= message_type %>"><%= message %></div>
-        <% end %>
+                <%= render 'shared/dashboard/invitationsmenu' %>
 
-        <!-- Example row of columns -->
-        <%= yield %>
-      </div> <!-- /container -->
-    </div><!--/span-->
-  </div><!--/row-->
+                <% flash.each do |message_type, message| %>
+                    <div class="alert alert-<%= message_type %>"><%= message %></div>
+                <% end %>
 
-</div><!--/.fluid-container-->
-
-</body>
+                <!-- Example row of columns -->
+                <%= yield %>
+              </div> <!-- /container -->
+            </div><!--/span-->
+          </div><!--/row-->
+        </div><!--/.fluid-container-->
+    </body>
 </html>

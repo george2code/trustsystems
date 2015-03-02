@@ -2,6 +2,7 @@
 <html>
     <head>
       <title><%= full_title(yield(:title)) %></title>
+      <%= favicon_link_tag 'favicon.ico' %>
       <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700italic,700'
             rel='stylesheet'
             type='text/css'>
@@ -41,7 +42,7 @@
                       <% else %>
                           <ul class="top-login-links navbar-right">
                             <li><%= link_to 'for Clients', root_path, class: 'btn btn-primary' %></li>
-                            <li><%= link_to 'Login', about_path, class: 'btn btn-warning' %></li>
+                            <li><%= link_to 'Login', business_login_path, class: 'btn btn-warning' %></li>
                           </ul>
                       <% end %>
 

@@ -6,7 +6,7 @@
 .list-group a span {font-size: 24px; float: left;}
 .list-group a span.glyphicon-chevron-right {font-size: 14px; float: none; margin-top: 5px;}
 
-.sidebar-nav li a {font-size: 18px;}
+.sidebar-nav li a {font-size: 18px; color: #2981a4;}
 
 .additional_info {padding: 40px 15px 20px;}
 .additional_info p {font-size: 12px;}
@@ -28,3 +28,30 @@
 .review ul.rate li { float: left; margin-right: 3px;}
 .review ul.rate a { background: asset-url("trust_star1.png") no-repeat;width: 18px; height: 18px; display: block; }
 .review .review-date p {font-size: 12px;}
+
+.box-md,
+.box-lg {background-color: lightgray; padding: 10px 15px;}
+.box-lg .box-body {
+  height: 200px;
+  line-height: 170px;
+  text-align: center;
+  font-size: 44px;
+}
+.box-md .box-body {
+  height: 120px;
+  line-height: 90px;
+  text-align: center;
+  font-size: 44px;
+}
+
+.box-gray {background-color: #c2c2c2;}
+.box-lgray h3,
+.box-lgray p,
+.box-gray h3,
+.box-gray p
+{color: #1c424f;}
+.box-lgray {background-color: #ebebeb;}
+.box-orange {background-color: #e78125; color: #fff;}
+.box-orange p {color: #fff;}
+.box-blue {background-color: #428bca; color: #fff;}
+.box-blue p {color: #fff;}

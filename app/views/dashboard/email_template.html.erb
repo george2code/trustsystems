@@ -30,20 +30,27 @@
 <!-- Template -->
 <h4>Template Settings</h4>
 <br />
-<form role="form">
+<%= form_for @afs, :url => url_for(:controller => 'dashboard', :action => 'email_template') do |f| %>
   <div class="form-group">
-    <label for="exampleInputEmail1">Delay</label>
-    @Html.TextBoxFor(m => m.Delay, new { @class = "form-control", @placeholder = "in days" })
-    @Html.ValidationMessageFor(m => m.Delay)
+    <%= f.label :email_delay %>
+    <%= f.text_field :email_delay, autofocus: true, placeholder: 'Delay', class: 'form-control' %>
   </div>
   <div class="form-group">
-    <label for="exampleInputPassword1">Subject</label>
-    @Html.TextBoxFor(m => m.Subject, new { @class = "form-control", @value = "Ваше мнение покупателя  важно для  [DomainName]" })
-    @Html.ValidationMessageFor(m => m.Subject)
+    <%= f.label :email_subject %>
+    <%= f.text_field :email_subject, placeholder: 'Subject', class: 'form-control' %>
   </div>
   <div class="form-group">
-    @Html.EditorFor(model => model.Content)
-    @Html.ValidationMessageFor(model => model.Content)
+    <!-- model.Content -->
+    <textarea id="some-textarea" class='wysihtml5' placeholder="Enter template ..."></textarea>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(function() {
+                $('.wysihtml5').editable({inlineMode: false})
+            });
+
+        })
+    </script>
   </div>
 
 
@@ -59,6 +66,8 @@
   </div>
 
 
-  <button type="submit" class="btn btn-success">Submit</button>
-</form>
+    <%= f.submit 'Save settings', :class => 'btn btn-success btn-block' %>
+<% end %>
 <!-- end Template -->
+
+<br />

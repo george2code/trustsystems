@@ -1,0 +1,53 @@
+<div class="well sidebar-nav">
+  <ul class="nav nav-pills nav-stacked" role="tablist">
+    <li role="presentation" class="<%= current_class?(dashboard_path) %>">
+      <%= link_to dashboard_path do %>
+          <span class="glyphicon glyphicon-home"></span> Dashboard
+      <% end %>
+    </li>
+    <li role="presentation" class="<%= current_class_controller?('invitations') %>">
+      <%= link_to invitations_path do %>
+          <span class="glyphicon glyphicon-envelope"></span> Invitations
+      <% end %>
+    </li>
+    <li role="presentation" class="<%= current_class?(modules_path) %>">
+      <%= link_to modules_path do %>
+          <span class="glyphicon glyphicon-th"></span> Modules
+      <% end %>
+    </li>
+    <li role="presentation" class="<%= current_class?(reviews_path) %>">
+      <%= link_to reviews_path do %>
+          <span class="glyphicon glyphicon-star-empty"></span> Reviews
+      <% end %>
+    </li>
+    <!--<li role="presentation"><a href="#"><span class="glyphicon glyphicon-cog"></span> Integrations</a></li>-->
+    <li role="presentation" class="<%= current_class?(statistics_path) %>">
+      <%= link_to statistics_path do %>
+        <span class="glyphicon glyphicon-align-left"></span> Statistics
+      <% end  %>
+    </li>
+    <li role="presentation" class="<%= current_class_controller?('company_profile') %>">
+      <%= link_to company_profile_information_path do %>
+          <span class="glyphicon glyphicon-comment"></span> Company profile
+      <% end  %>
+    </li>
+    <li role="presentation" class="<%= current_class?(usermanagement_path) %>">
+      <%= link_to usermanagement_path do %>
+        <span class="glyphicon glyphicon-user"></span> User manage
+      <% end  %>
+    </li>
+  </ul>
+
+  <div class="additional_info">
+    <p><a href="#">Войти на публичный профиль</a></p>
+    <p>Статус: <strong>Partner</strong><br />
+      Подписка истекает: 09.06.2015</p>
+    <h4>Задать вопрос Службе Поддержки</h4>
+    <p>Наша дружелюбная Служба Поддержки клиентов всегда рада помочь Вам. Отправьте им e-mail или свяжитесь
+      по указанному ниже телефону.</p>
+    <h5>
+      UK 0800 068-0435<br />
+      US 877 941-0960
+    </h5>
+  </div>
+</div><!--/.well -->

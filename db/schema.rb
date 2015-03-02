@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150128093024) do
+ActiveRecord::Schema.define(version: 20150224122212) do
+
+  create_table "afs", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "email_delay"
+    t.string   "email_subject"
+    t.integer  "email_template_id"
+    t.text     "email_template_text"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "authorizations", force: true do |t|
     t.string   "provider"
@@ -59,6 +69,13 @@ ActiveRecord::Schema.define(version: 20150128093024) do
 
   add_index "company_categories", ["company_id"], name: "index_company_categories_on_company_id"
   add_index "company_categories", ["subcategory_id"], name: "index_company_categories_on_subcategory_id"
+
+  create_table "email_templates", force: true do |t|
+    t.string   "language"
+    t.text     "template"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "review_comments", force: true do |t|
     t.integer  "review_id"

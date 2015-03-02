@@ -55,6 +55,8 @@ GEM
       i18n (~> 0.5)
     faraday (0.9.1)
       multipart-post (>= 1.2, < 3)
+    font-awesome-rails (4.3.0.0)
+      railties (>= 3.2, < 5.0)
     friendly_id (5.1.0)
       activerecord (>= 4.0.0)
     hashie (3.3.2)
@@ -178,6 +180,9 @@ GEM
     world-flags (0.6.5)
       hashie (>= 1.2)
       i18n (>= 0.6)
+    wysiwyg-rails (1.2.6)
+      font-awesome-rails (>= 4.2.0.0)
+      railties (>= 3.2, < 5.0)
 
 PLATFORMS
   ruby
@@ -189,6 +194,7 @@ DEPENDENCIES
   country_select
   devise (~> 3.2.4)
   faker
+  font-awesome-rails
   friendly_id
   jbuilder (~> 2.0)
   jquery-rails
@@ -212,3 +218,4 @@ DEPENDENCIES
   unicorn
   will_paginate-bootstrap
   world-flags (~> 0.6.5)
+  wysiwyg-rails

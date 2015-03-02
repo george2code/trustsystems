@@ -19,4 +19,8 @@ class PagesController < ApplicationController
 
   def solutionsbusiness
   end
+
+  def guidelines
+    
+  end
 end
