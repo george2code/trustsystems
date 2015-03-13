@@ -174,6 +174,8 @@ GEM
       raindrops (~> 0.7)
     warden (1.2.3)
       rack (>= 1.0)
+    wicked (1.1.1)
+      rails (>= 3.0.7)
     will_paginate (3.0.7)
     will_paginate-bootstrap (1.0.1)
       will_paginate (>= 3.0.3)
@@ -216,6 +218,7 @@ DEPENDENCIES
   turbolinks
   uglifier (>= 1.3.0)
   unicorn
+  wicked
   will_paginate-bootstrap
   world-flags (~> 0.6.5)
   wysiwyg-rails

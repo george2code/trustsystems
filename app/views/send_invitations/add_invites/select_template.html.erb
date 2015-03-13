@@ -1,0 +1,66 @@
+<h1>Invite your customers</h1>
+
+<div class="btn-group" role="group" aria-label="...">
+  <%= link_to 'Add Invites', send_invitations_add_invites_path, :class => 'btn btn-info' %>
+  <button type="button" class="btn btn-default">Send from</button>
+  <button type="button" class="btn btn-primary">Select template</button>
+  <button type="button" class="btn btn-default">Done</button>
+</div>
+
+<h2>Create your invitation email</h2>
+<p>Use our standard invitation email template or customize it to fit your brand. You can modify the text, color, font,
+  and add your own logo. Read instructions.</p>
+<br />
+
+<form class="form-horizontal">
+    <div class="form-group">
+      <label for="exampleInputName2">Template name:</label>
+      <input type="text" class="form-control" id="exampleInputName2" value="Standard template for ru-RU" disabled>
+    </div>
+
+  <div class="form-group">
+    <label for="exampleInputName2">Subject:</label>
+    <input type="text" class="form-control" id="exampleInputName2" value="Ваше мнение покупателя  важно для  [DomainName]" disabled>
+  </div>
+
+    <div class="form-group">
+      <!-- model.Content -->
+      <label for="exampleInputName2">Content:</label>
+      <textarea id="some-textarea" class='wysihtml5' placeholder="Enter template ..."></textarea>
+
+      <script type="text/javascript">
+          $(document).ready(function(){
+              $(function() {
+                  $('.wysihtml5').editable({inlineMode: false})
+              });
+
+          })
+      </script>
+    </div>
+
+
+    <div class="panel panel-default">
+      <div class="panel-body">
+        You can use special placeholders in the email which will be replaced when we send the email:<br />
+        <strong>[Name]</strong> The name of the customer or ”customer” if unknown<br />
+        <strong>[Link]</strong> The one-click review link<br />
+        <strong>[DomainName]</strong> The name of the domain<br />
+        <strong>[Order]</strong> The order number<br />
+        <strong>[UnsubscribeLink]</strong> The unsubscribe link.
+      </div>
+    </div>
+
+</form>
+
+<div class="row">
+  <div class="col-md-3">
+    <a href="#" class="btn btn-warning">Back</a>
+  </div>
+  <div class="col-md-9 text-right">
+    <a href="#" class="btn btn-info">Send test email to sale@ts.com</a>
+    <%= link_to 'Send invitations', next_wizard_path, :class => 'btn btn-success' %>
+  </div>
+</div>
+
+<br />
+<br />

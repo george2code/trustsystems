@@ -1,0 +1,2 @@
+module SendInvitations::CopyPasteHelper
+end

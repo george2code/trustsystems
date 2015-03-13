@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
 
 
-
-
   get 'company_profile/information'
   get 'company_profile/promotion'
   get 'company_profile/guarantee'
@@ -54,6 +52,14 @@ Rails.application.routes.draw do
     get 'invitations/invite_customers'
     get 'invitations/afs'
     get 'invitations/settings'
+
+    namespace :send_invitations do
+      resources :add_invites
+    end
+    namespace :send_invitations do
+      resources :copy_paste
+    end
+    # end invitations
   end
 
   # -----------------------------------

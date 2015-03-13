@@ -26,7 +26,13 @@
 .review a:hover {background-color: #fff; color: red!important;}
 .review ul.rate {margin-bottom: 20px;}
 .review ul.rate li { float: left; margin-right: 3px;}
-.review ul.rate a { background: asset-url("trust_star1.png") no-repeat;width: 18px; height: 18px; display: block; }
+.review ul.rate a {
+  background: asset-url("trust_star1.png") no-repeat;
+  width: 18px;
+  height: 18px;
+  display: block;
+  background-size: 18px;
+}
 .review .review-date p {font-size: 12px;}
 
 .box-md,

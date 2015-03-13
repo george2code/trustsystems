@@ -1,0 +1,69 @@
+<h1>Invite your customers</h1>
+<div class="btn-group" role="group" aria-label="...">
+  <%= link_to 'Add Invites', send_invitations_add_invites_path, :class => 'btn btn-primary' %>
+  <button type="button" class="btn btn-default">Send from</button>
+  <button type="button" class="btn btn-default">Select template</button>
+  <button type="button" class="btn btn-default">Done</button>
+</div>
+<h2>Type in your customer information</h2>
+<p>Add your customers one by one. Simply type in the relevant info: names, email addresses and reference IDs.
+  Hit the Continue button when you're all set. We recommend you enter a maximum of 100 invitations at any
+  one time.</p>
+
+
+
+<div class="panel panel-info invite-add-panel">
+  <div class="panel-body">
+    <table>
+      <tr>
+        <td>
+          <input type="text" value="" class="form-control" placeholder="Email (required)" />
+        </td>
+        <td>
+          <input type="text" value="" class="form-control" placeholder="Name (required)" />
+        </td>
+        <td>
+          <input type="text" value="" class="form-control" placeholder="Reference ID (required)" />
+        </td>
+        <td>
+          <a href="#" class="btn btn-primary">Add</a>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Email <label class="text-danger">*</label></th>
+    <th>Name <label class="text-danger">*</label></th>
+    <th colspan="2">Reference ID<label class="text-danger">*</label></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>Mark</td>
+    <td>Otto</td>
+    <td>@mdo</td>
+    <td class="text-center"><a href="" class="glyphicon glyphicon-trash"></a></td>
+  </tr>
+  <tr>
+    <td>Jacob</td>
+    <td>Thornton</td>
+    <td>@fat</td>
+    <td class="text-center"><a href="" class="glyphicon glyphicon-trash"></a></td>
+  </tr>
+  <tr>
+    <td>Larry</td>
+    <td>the Bird</td>
+    <td>@twitter</td>
+    <td class="text-center"><a href="" class="glyphicon glyphicon-trash"></a></td>
+  </tr>
+  </tbody>
+</table>
+
+<br />
+
+<%= link_to 'Clear all data', '#', :class => 'btn btn-danger' %>
+<%= link_to 'Continue', next_wizard_path, :class => 'btn btn-info' %>

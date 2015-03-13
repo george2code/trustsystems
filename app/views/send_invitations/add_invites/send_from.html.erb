@@ -1,0 +1,41 @@
+<h1>Invite your customers</h1>
+
+<div class="btn-group" role="group" aria-label="...">
+  <%= link_to 'Add Invites', send_invitations_add_invites_path, :class => 'btn btn-info' %>
+  <button type="button" class="btn btn-primary">Send from</button>
+  <button type="button" class="btn btn-default">Select template</button>
+  <button type="button" class="btn btn-default">Done</button>
+</div>
+
+<h2>Sender Information</h2>
+<p>Please set up your Sender Information below. The Sender Name and Sender Email are what appears in your customers'
+  inboxes when they receive your invitation. The Reply-to Email is the address you want your customers to use in
+  reply to your invitation. Need Help?</p>
+<br />
+<form>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Sender name</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter name">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Reply-to Email</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+  </div>
+    <p>Sender Email</p>
+  <div class="radio">
+    <label>
+      <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+      Send from noreply.invitations@trustpilot.com (no further setup required)
+    </label>
+  </div>
+  <div class="radio">
+    <label>
+      <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+      Send using your own email domain for the sender address (requires technical knowledge to set up)
+    </label>
+  </div>
+</form>
+<br />
+
+<%= link_to 'Back', previous_wizard_path, :class => 'btn btn-warning' %>
+<%= link_to 'Continue', next_wizard_path, :class => 'btn btn-primary' %>

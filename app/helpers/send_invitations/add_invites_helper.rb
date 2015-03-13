@@ -1,0 +1,2 @@
+module SendInvitations::AddInvitesHelper
+end
