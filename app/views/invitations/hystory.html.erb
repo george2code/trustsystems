@@ -58,15 +58,17 @@
       </tr>
       </thead>
       <tbody>
-      <% 20.times do %>
-      <tr>
-        <td>chichik_230@mail.ru</td>
-        <td class="text-success">Delivery successful</td>
-        <td>9 months ago</td>
-        <td>9 months ago</td>
-        <td class="text-center">300</td>
-      </tr>
-      <% end %>
+          <% @customers.each do |customer| %>
+              <tr>
+                <td><%= customer.email %></td>
+                <td class="text-success state-<%= customer.state %>">
+                  <span><%= InvitationState.get_name(customer.state) %></span>
+                </td>
+                <td><%= time_ago_in_words(customer.created_at) %></td>
+                <td>-</td>
+                <td class="text-center"><%= customer.orderId %></td>
+              </tr>
+          <% end %>
       </tbody>
     </table>
   </div>

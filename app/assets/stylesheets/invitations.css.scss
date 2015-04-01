@@ -1,3 +1,25 @@
 // Place all the styles related to the Invitations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.state-1 span,
+.state-2 span,
+.state-3 span,
+.state-4 span {
+  border-radius: 0.25em;
+  color: #ffffff;
+  display: inline;
+  font-size: 75%;
+  font-weight: bold;
+  line-height: 1;
+  padding: 0.2em 0.6em 0.3em;
+  text-align: center;
+  vertical-align: baseline;
+  white-space: nowrap;
+  background-color: #5cb85c;
+}
+
+.state-1 span {background-color: #5bc0de;}
+.state-2 span {background-color: #5cb85c;}
+.state-3 span {background-color: #d9534f;}
+.state-4 span {background-color: #999999;}

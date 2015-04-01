@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150224122212) do
+ActiveRecord::Schema.define(version: 20150331134340) do
 
   create_table "afs", force: true do |t|
     t.integer  "user_id"
@@ -76,6 +76,30 @@ ActiveRecord::Schema.define(version: 20150224122212) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "invitation_customers", force: true do |t|
+    t.string   "email",         null: false
+    t.string   "name",          null: false
+    t.string   "orderId"
+    t.integer  "invitation_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "state"
+  end
+
+  add_index "invitation_customers", ["invitation_id"], name: "index_invitation_customers_on_invitation_id"
+
+  create_table "invitations", force: true do |t|
+    t.string   "senderName"
+    t.string   "replyToEmail",      null: false
+    t.integer  "email_template_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "invitations", ["email_template_id"], name: "index_invitations_on_email_template_id"
+  add_index "invitations", ["user_id"], name: "index_invitations_on_user_id"
 
   create_table "review_comments", force: true do |t|
     t.integer  "review_id"

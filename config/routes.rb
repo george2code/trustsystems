@@ -38,8 +38,11 @@ Rails.application.routes.draw do
     end
 
     get 'modules' => 'dashboard#modules'
+
     scope '/modules' do
+      get 'dashboard/update_template'
       get 'emailtemplate' => 'dashboard#email_template'
+      post 'emailtemplate' => 'dashboard#email_template'
       get 'categories' => 'dashboard#categories'
     end
     get 'reviews' => 'dashboard#reviews'

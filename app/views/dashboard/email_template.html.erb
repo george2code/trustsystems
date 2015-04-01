@@ -18,10 +18,17 @@
 <br />
 <h4>Show the template for</h4>
 
-<div class="btn-group">
-  <button type="button" class="btn btn-default">English</button>
-  <button type="button" class="btn btn-default">Russian</button>
-</div> or <button type="button" class="btn btn-primary">Revert all templaes to default</button>
+
+
+
+<div class="btn-group group-languages">
+  <% LanguageCode.constants(false).each do |const_name| %>
+      <button type="button" class="btn btn-default" id="<%= LanguageCode::LanguageCode.const_get(const_name) %>">
+        <%= LanguageCode.get_name_by_key(LanguageCode.const_get(const_name)) %>
+      </button>
+  <% end %>
+</div>
+<!--or <button type="button" class="btn btn-primary">Revert all templaes to default</button>-->
 
 <br />
 <br />
@@ -30,27 +37,21 @@
 <!-- Template -->
 <h4>Template Settings</h4>
 <br />
-<%= form_for @afs, :url => url_for(:controller => 'dashboard', :action => 'email_template') do |f| %>
-  <div class="form-group">
-    <%= f.label :email_delay %>
-    <%= f.text_field :email_delay, autofocus: true, placeholder: 'Delay', class: 'form-control' %>
-  </div>
+<%= form_for @afs, :url => url_for(:controller => 'dashboard', :action => 'email_template'), :html => { :method => :post } do |f| %>
+
+    <div class="form-group">
+
+        <%= f.label :email_delay %>
+        <%= f.text_field :email_delay, autofocus: true, placeholder: 'Delay', class: 'form-control', id: 'inputDelay' %>
+    </div>
+
   <div class="form-group">
     <%= f.label :email_subject %>
     <%= f.text_field :email_subject, placeholder: 'Subject', class: 'form-control' %>
   </div>
   <div class="form-group">
     <!-- model.Content -->
-    <textarea id="some-textarea" class='wysihtml5' placeholder="Enter template ..."></textarea>
-
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $(function() {
-                $('.wysihtml5').editable({inlineMode: false})
-            });
-
-        })
-    </script>
+    <%= f.text_area :email_template_text, class: 'wysihtml5', id: 'some-textarea' %>
   </div>
 
 
@@ -71,3 +72,73 @@
 <!-- end Template -->
 
 <br />
+
+
+
+<script type="text/javascript">
+    $( document ).ready(function()
+    {
+        $('.wysihtml5').editable({
+            inlineMode: false,
+            placeholder: 'Enter template...'
+        });
+
+
+        //var wysihtml5Editor = $('.wysihtml5').data("wysihtml5").editor;
+
+
+
+//        var wysihtml5Editor = $('.wysihtml5').data("wysihtml5").editor;
+//        wysihtml5Editor.composer.commands.exec("insertHTML", "<p>sdfsdfd</p>");
+
+//        var editor = new wysihtml5.Editor("some-textarea", {
+//            toolbar:      "wysihtml5-toolbar",
+//            stylesheets:  "<%= stylesheet_path('wysiwyg') %>",
+//            parserRules:  wysihtml5ParserRules
+//        });
+
+
+//        $('.wysihtml5').editable({inlineMode: false});
+//        var value = editorInstance.getValue();
+
+//
+//        editorInstance.composer.commands.exec("insertHTML", "<p>bar</p>");
+
+        $('.group-languages button').click(function(e)
+        {
+            var id = $(this).attr('id');
+
+            // highlight
+            $(this).parent().find('button').removeClass('btn-primary').removeClass('btn-default').addClass('btn-default');
+            $(this).removeClass('btn-default').addClass('btn-primary');
+
+            // update template via ajax
+            $.ajax({
+                url: "dashboard/update_template",
+                type: "GET",
+                dataType: 'html',
+                data: {languageId : id}
+            }).done(function (data) {
+                if (data.length > 0)
+                {
+                    $(".fr-placeholder").remove();
+                    $(".wysihtml5").editable("setHTML", data, false);
+
+//                    alert(data);
+//                    $(".fr-placeholder").hide();
+//                    $(".froala-view").html(data);
+//                    $('.wysihtml5').wysihtml5();
+//                    var wysihtml5Editor = $('.wysihtml5').data("wysihtml5").editor;
+//                    wysihtml5Editor.setValue("<p>fuck</p>");
+//                    console.log('wysihtml5Editor: '+wysihtml5Editor);
+//                    // The following is important since wysihtml5 is initialized asynchronously
+//                    wysihtml5Editor.on("load", function() {
+//                        alert(data);
+//                        wysihtml5Editor.composer.commands.exec("insertHTML", "<p>asfasdfasdf</p>");
+//
+//                    });
+                }
+            });
+        });
+    });
+</script>

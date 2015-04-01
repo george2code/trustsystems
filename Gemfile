@@ -70,6 +70,11 @@ gem 'wysiwyg-rails'
 
 gem 'wicked'
 
+#rails redirect_to doesn't load the javascript under assets
+#Turbolinks doesn't load some js files as you browse page to page
+# (It's because the nodes on which you bind events no longer exist.), but this gem solves that problem.
+gem 'jquery-turbolinks'
+
 
 
 # Use ActiveModel has_secure_password

@@ -12,55 +12,29 @@
   and add your own logo. Read instructions.</p>
 <br />
 
-<form class="form-horizontal">
+
+<%= form_for @afs, url: wizard_path, method: :put do  |f| %>
     <div class="form-group">
-      <label for="exampleInputName2">Template name:</label>
-      <input type="text" class="form-control" id="exampleInputName2" value="Standard template for ru-RU" disabled>
+        <%= f.label :email_subject %>
+        <%= f.text_field :email_subject, class: 'form-control', :disabled => true %>
     </div>
 
-  <div class="form-group">
-    <label for="exampleInputName2">Subject:</label>
-    <input type="text" class="form-control" id="exampleInputName2" value="Ваше мнение покупателя  важно для  [DomainName]" disabled>
-  </div>
-
     <div class="form-group">
-      <!-- model.Content -->
-      <label for="exampleInputName2">Content:</label>
-      <textarea id="some-textarea" class='wysihtml5' placeholder="Enter template ..."></textarea>
-
-      <script type="text/javascript">
-          $(document).ready(function(){
-              $(function() {
-                  $('.wysihtml5').editable({inlineMode: false})
-              });
-
-          })
-      </script>
+        <!-- model.Content -->
+        <%= f.label :email_template_text %>
+        <%= @afs.email_template_text.html_safe %>
     </div>
 
-
-    <div class="panel panel-default">
-      <div class="panel-body">
-        You can use special placeholders in the email which will be replaced when we send the email:<br />
-        <strong>[Name]</strong> The name of the customer or ”customer” if unknown<br />
-        <strong>[Link]</strong> The one-click review link<br />
-        <strong>[DomainName]</strong> The name of the domain<br />
-        <strong>[Order]</strong> The order number<br />
-        <strong>[UnsubscribeLink]</strong> The unsubscribe link.
+    <div class="row">
+      <div class="col-md-3">
+        <%= link_to 'Back', previous_wizard_path, :class => 'btn btn-warning' %>
+      </div>
+      <div class="col-md-9 text-right">
+        <a href="javascript:void(0);" class="btn btn-info">Send test email to sale@ts.com</a>
+        <%= f.submit 'Send invitations', class: 'btn btn-success' %>
       </div>
     </div>
-
-</form>
-
-<div class="row">
-  <div class="col-md-3">
-    <a href="#" class="btn btn-warning">Back</a>
-  </div>
-  <div class="col-md-9 text-right">
-    <a href="#" class="btn btn-info">Send test email to sale@ts.com</a>
-    <%= link_to 'Send invitations', next_wizard_path, :class => 'btn btn-success' %>
-  </div>
-</div>
+<% end %>
 
 <br />
 <br />

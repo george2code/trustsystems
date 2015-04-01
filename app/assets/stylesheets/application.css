@@ -16,8 +16,11 @@
  *= require flags/basic
  *= require flags/flags16
  *= require flags/flags32
+
  *= require froala_editor.min.css
  *= require froala_style.min.css
+ *= require font-awesome
+
  *= require font-awesome
  */
 
@@ -375,3 +378,4 @@ footer .container a {
 .froala-box .froala-wrapper.f-basic {border-color: #2981a4;}
 .froala-wrapper textarea {max-width: 100%;}
 .froala-view {height: 760px;}
+.field_with_errors .froala-box .froala-wrapper {border-color: red;}

@@ -13,10 +13,12 @@
 <br />
 <p>You can enter up to 300 people at a time.</p>
 
-<form>
-  <textarea style="min-width:100%;" class="form-control" placeholder="example@gmail.com, Peter Jones, 1234567890" rows="18"></textarea>
-</form>
 
+<%= form_for :invitation_customer, url: wizard_path, method: :put do  |f| %>
+    <%= f.text_area :invitations_data, placeholder: 'example@gmail.com, Peter Jones, 1234567890',
+                    rows: '18', class: 'form-control', style: 'min-width:100%;', :value => session[:cp_invites] %>
+    <%= f.submit 'Continue 2', class: 'btn btn-info' %>
+<% end %>
 
 <%= link_to 'Continue', next_wizard_path, :class => 'btn btn-info' %>
 
