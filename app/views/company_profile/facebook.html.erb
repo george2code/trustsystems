@@ -2,18 +2,24 @@
 
 <div class="row">
   <div class="col-md-8">
-    <h1 class="title">Facebook Like Box</h1>
+    <h1 class="title">Facebook Page Box</h1>
     <p>Do customers like you? Prove it! Boost customer confidence by implementing a Facebook Like
       Box on your profile page.</p>
     <br />
     <div class="panel panel-default">
       <div class="panel-body box-lgray">
-        <form>
-          <label>Insert your Facebook page URL or page ID.</label>
-          <input type="text" class="form-control" style="max-width: 340px;" placeholder="Eg. http://www.facebook.com/trustsystems" />
-          <br />
-          <input type="submit" value="Update" class="btn btn-primary" />
-        </form>
+
+        <%= form_for @company, :url => url_for(:controller => 'dashboard', :action => 'email_template'), :html => { :method => :post } do |f| %>
+            <label>Insert your Facebook page URL.</label>
+            <%= f.text_field :url_facebook,
+                             autofocus: true,
+                             placeholder: 'Eg. http://www.facebook.com/trustsystems',
+                             class: 'form-control',
+                             style: 'max-width: 340px;' %>
+            <br />
+            <%= f.submit 'Update', :class => 'btn btn-primary' %>
+        <% end %>
+
       </div>
     </div>
   </div>

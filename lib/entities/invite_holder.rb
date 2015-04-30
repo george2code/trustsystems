@@ -5,6 +5,6 @@ class InviteHolder
   def initialize(email, name, orderId)
     @email = email
     @name = name
-    @oderId = orderId
+    @orderId = orderId
   end
 end

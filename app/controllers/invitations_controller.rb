@@ -1,11 +1,13 @@
 class InvitationsController < ApplicationController
   layout 'dashboard'
 
+
   def hystory
     unless current_user.nil?
-      @customers = InvitationCustomers.includes(:invitation).where("user_id = #{current_user.id}").references(:invitation).all
+      @customers = Invitation.where(user_id: current_user.id)
     end
   end
+
 
   def invite_customers
     #clear session
@@ -14,9 +16,24 @@ class InvitationsController < ApplicationController
     session.delete(:cp_reply)
   end
 
+
   def afs
   end
 
+
   def settings
+  end
+
+
+  def export
+    invites = Invitation.where(state: InvitationState::QUEUED)
+    if invites.any?
+      invites.each do |invite|
+        invite.state = InvitationState::CANCELED
+        invite.save
+      end
+
+      render :json => ""
+    end
   end
 end

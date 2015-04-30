@@ -17,7 +17,7 @@
   </div>
   <div class="col-md-6">
     <div class="pull-right">
-        <input type="button" class="btn btn-success" value="Export" />
+        <input type="button" class="btn btn-success btn-export" value="Export" />
         <input type="button" class="btn btn-danger" value="Cancel queued" />
     </div>
   </div>
@@ -95,3 +95,19 @@
 </div>
 
 <br />
+
+
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+        $('.btn-export').click(function() {
+            $.ajax({
+                url: "invitations/export",
+                type: "GET",
+                dataType: 'json'
+            }).done(function (data) {
+                location.reload();
+            });
+        });
+    });
+</script>

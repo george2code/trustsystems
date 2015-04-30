@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150331134340) do
+ActiveRecord::Schema.define(version: 20150430103743) do
 
   create_table "afs", force: true do |t|
     t.integer  "user_id"
@@ -35,19 +35,20 @@ ActiveRecord::Schema.define(version: 20150331134340) do
   end
 
   create_table "companies", force: true do |t|
-    t.string   "name",        null: false
+    t.string   "name",         null: false
     t.text     "description"
     t.string   "home_site"
-    t.string   "slug",        null: false
+    t.string   "slug",         null: false
     t.integer  "country_id"
     t.integer  "city_id"
     t.string   "zip"
-    t.string   "email",       null: false
+    t.string   "email",        null: false
     t.string   "phone"
     t.text     "address"
     t.string   "logo"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "url_facebook"
   end
 
   create_table "companies_categories", id: false, force: true do |t|
@@ -77,18 +78,6 @@ ActiveRecord::Schema.define(version: 20150331134340) do
     t.datetime "updated_at"
   end
 
-  create_table "invitation_customers", force: true do |t|
-    t.string   "email",         null: false
-    t.string   "name",          null: false
-    t.string   "orderId"
-    t.integer  "invitation_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "state"
-  end
-
-  add_index "invitation_customers", ["invitation_id"], name: "index_invitation_customers_on_invitation_id"
-
   create_table "invitations", force: true do |t|
     t.string   "senderName"
     t.string   "replyToEmail",      null: false
@@ -96,6 +85,10 @@ ActiveRecord::Schema.define(version: 20150331134340) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "email"
+    t.string   "name"
+    t.string   "orderId"
+    t.integer  "state"
   end
 
   add_index "invitations", ["email_template_id"], name: "index_invitations_on_email_template_id"

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'company_profile/promotion'
   get 'company_profile/guarantee'
   get 'company_profile/facebook'
+  post 'company_profile/facebook'
 
 
   # Business pages
@@ -55,6 +56,7 @@ Rails.application.routes.draw do
     get 'invitations/invite_customers'
     get 'invitations/afs'
     get 'invitations/settings'
+    get 'invitations/export'
 
     namespace :send_invitations do
       resources :add_invites

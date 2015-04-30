@@ -11,31 +11,36 @@
 <p>Please set up your Sender Information below. The Sender Name and Sender Email are what appears in your customers'
   inboxes when they receive your invitation. The Reply-to Email is the address you want your customers to use in
   reply to your invitation. Need Help?</p>
-<br />
-<form>
-  <div class="form-group">
-    <label for="exampleInputEmail1">Sender name</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter name">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputEmail1">Reply-to Email</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-  </div>
-    <p>Sender Email</p>
-  <div class="radio">
-    <label>
-      <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-      Send from noreply.invitations@trustpilot.com (no further setup required)
-    </label>
-  </div>
-  <div class="radio">
-    <label>
-      <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-      Send using your own email domain for the sender address (requires technical knowledge to set up)
-    </label>
-  </div>
-</form>
+
 <br />
 
-<%= link_to 'Back', previous_wizard_path, :class => 'btn btn-warning' %>
-<%= link_to 'Continue', next_wizard_path, :class => 'btn btn-primary' %>
+<%= form_for :invitation, url: wizard_path, method: :put do  |f| %>
+    <div class="form-group">
+      <%= f.label :senderName %>
+      <%= f.text_field :senderName, placeholder: 'Enter name', class: 'form-control', :value => session[:cp_sender] %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :replyToEmail %>
+      <%= f.email_field :replyToEmail, placeholder: 'Enter email', class: 'form-control', :value => session[:cp_reply] %>
+    </div>
+
+    <p>Sender Email</p>
+    <div class="radio">
+      <label>
+        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+        Send from noreply.invitations@trustpilot.com (no further setup required)
+      </label>
+    </div>
+    <div class="radio">
+      <label>
+        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+        Send using your own email domain for the sender address (requires technical knowledge to set up)
+      </label>
+    </div>
+
+    <br />
+
+    <%= link_to 'Back', previous_wizard_path, :class => 'btn btn-warning' %>
+    <%= f.submit 'Continue', class: 'btn btn-primary btn_send_from' %>
+<% end %>

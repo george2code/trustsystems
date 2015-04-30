@@ -3,13 +3,23 @@ class CompaniesController < ApplicationController
 
   respond_to :html
 
+  require 'uri'
+
   def index
     @companies = Company.all
     respond_with(@companies)
   end
 
   def show
-    respond_with(@company)
+
+    @res = 'NO'
+
+    url = 'https://www.facebook.com/facebook'
+    if url =~ URI::regexp
+      @res =  'Correct URL'
+    end
+
+    respond_with(@company, @res)
   end
 
   def new

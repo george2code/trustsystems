@@ -26,7 +26,7 @@ class CustomerService
       if items.length == 3 && items[0].strip.length > 0 && is_a_valid_email?(items[0])
         items[1].strip.length > 0 && items[2].strip.length > 0
         # check for existed email
-        if InvitationCustomers.exists?(email: items[0])
+        if Invitation.exists?(email: items[0])
           # email already in database, skip this record
           duplicate_emails += 1
         else
@@ -48,20 +48,19 @@ class CustomerService
       }.to_json
     else
       #update database
-      invitation = Invitation.new
-      invitation.user_id = user_id   #current user
-      invitation.senderName = sender_name
-      invitation.replyToEmail = reply_to
-      invitation.save
-
       invite_array.each do |invite|
-        invitation_object = InvitationCustomers.new
-        invitation_object.email = invite.email
-        invitation_object.name = invite.name
-        invitation_object.orderId = invite.orderId
-        invitation_object.invitation_id = invitation.id
-        invitation_object.state = InvitationState::QUEUED
-        invitation_object.save
+        invitation = Invitation.new
+
+        invitation.user_id = user_id   #current user
+        invitation.senderName = sender_name
+        invitation.replyToEmail = reply_to
+
+        invitation.name = invite.name
+        invitation.email = invite.email
+        invitation.orderId = invite.orderId
+        invitation.state = InvitationState::QUEUED
+
+        invitation.save
       end
 
       #final message

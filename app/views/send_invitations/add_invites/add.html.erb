@@ -43,30 +43,30 @@
   </thead>
   <tbody>
   <tr>
-    <td>Mark</td>
-    <td>Otto</td>
-    <td>@mdo</td>
+    <td>mark@gmail.com</td>
+    <td>Mark Otto</td>
+    <td>w8t3wer0</td>
     <td class="text-center"><a href="" class="glyphicon glyphicon-trash"></a></td>
   </tr>
   <tr>
-    <td>Jacob</td>
-    <td>Thornton</td>
-    <td>@fat</td>
-    <td class="text-center"><a href="" class="glyphicon glyphicon-trash"></a></td>
-  </tr>
-  <tr>
-    <td>Larry</td>
-    <td>the Bird</td>
-    <td>@twitter</td>
+    <td>jacob@hotmail.com</td>
+    <td>Jacob Thornton</td>
+    <td>02348</td>
     <td class="text-center"><a href="" class="glyphicon glyphicon-trash"></a></td>
   </tr>
   </tbody>
 </table>
 
-<br />
 
-<%= link_to 'Clear all data', '#', :class => 'btn btn-danger btn_clear_all' %>
-<%= link_to 'Continue', next_wizard_path, :class => 'btn btn-info' %>
+<%= form_for :invitation_customer, url: wizard_path, method: :put do  |f| %>
+
+    <%= f.hidden_field :invitations_data, :value => '', id: 'hf_invites' %>
+    <br />
+
+    <%= link_to 'Clear all data', '#', :class => 'btn btn-danger btn_clear_all' %>
+    <%= f.submit 'Continue', class: 'btn btn-info btn-continue' %>
+<% end %>
+
 
 
 <script type="text/javascript">
@@ -128,6 +128,33 @@
         $('.btn_clear_all').click(function(e){
             e.preventDefault();
             $('.table tbody tr').remove();
+        });
+
+
+        // Continue
+        $('.btn-continue').click(function(e) {
+            if ($('.table tbody tr').length == 0) {
+                e.preventDefault();
+                alert('Нет приглашений, добавьте хотя бы одно, чтобы продолжить!')
+            }
+            else {
+                str = "";
+
+                // build string
+                $('.table tbody tr').each(function(i) {
+                    $(this).find('td:not(:last-child)').each(function(i) {
+                        str += $(this).text();
+                        if (i < 2)
+                            str += ',';
+                    });
+                    str += '\n';
+                });
+
+                // ajax, post invite strings
+                if (str.length > 0) {
+                    $('#hf_invites').val(str);
+                }
+            }
         });
     });
 </script>
