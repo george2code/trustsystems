@@ -3,7 +3,7 @@
     <% @user = User.find(review.user_id) %>
 <div class="review">
   <div class="row">
-    <div class="col-md-2 ava text-center">TEST
+    <div class="col-md-2 ava text-center">
       <img alt="140x140" class="img-circle" src="<%= asset_path(User.find(review.user_id).avatar) %>" data-holder-rendered="true" />
     </div>
     <div class="col-md-10 info">
@@ -13,7 +13,8 @@
             <li><a href="#"></a></li>
           <% end %>
         </ul>
-        <p  class="calendar pull-right"><%= review.updated_at.strftime("%d.%m.%Y / %H:%M") %></p>
+        <!--<p  class="calendar pull-right"><%= review.updated_at.strftime("%d.%m.%Y / %H:%M") %></p>-->
+        <p class="pull-right"><span class="label label-danger"><%= review.updated_at.strftime("%d.%m.%Y / %H:%M") %></span></p>
       </div>
       <p><a href="#"><%= @user.full_name %></a> | <%= @user.reviews.count %> отзыв(ов)</p>
       <div class="check confirm">Отзыв от подтвержденного покупателя</div>

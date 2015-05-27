@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150430103743) do
+ActiveRecord::Schema.define(version: 20150518110118) do
 
   create_table "afs", force: true do |t|
     t.integer  "user_id"
@@ -35,20 +35,32 @@ ActiveRecord::Schema.define(version: 20150430103743) do
   end
 
   create_table "companies", force: true do |t|
-    t.string   "name",         null: false
+    t.string   "name",                   null: false
     t.text     "description"
     t.string   "home_site"
-    t.string   "slug",         null: false
+    t.string   "slug",                   null: false
     t.integer  "country_id"
     t.integer  "city_id"
     t.string   "zip"
-    t.string   "email",        null: false
+    t.string   "email",                  null: false
     t.string   "phone"
     t.text     "address"
     t.string   "logo"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "url_facebook"
+    t.string   "logos_file_name"
+    t.string   "logos_content_type"
+    t.integer  "logos_file_size"
+    t.datetime "logos_updated_at"
+    t.string   "guarantee_file_name"
+    t.string   "guarantee_content_type"
+    t.integer  "guarantee_file_size"
+    t.datetime "guarantee_updated_at"
+    t.string   "promotion_file_name"
+    t.string   "promotion_content_type"
+    t.integer  "promotion_file_size"
+    t.datetime "promotion_updated_at"
   end
 
   create_table "companies_categories", id: false, force: true do |t|
@@ -147,6 +159,16 @@ ActiveRecord::Schema.define(version: 20150430103743) do
 
   add_index "subcategories", ["root_category_id"], name: "index_subcategories_on_root_category_id"
 
+  create_table "user_companies", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "company_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "user_companies", ["company_id"], name: "index_user_companies_on_company_id"
+  add_index "user_companies", ["user_id"], name: "index_user_companies_on_user_id"
+
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -171,6 +193,7 @@ ActiveRecord::Schema.define(version: 20150430103743) do
     t.integer  "role"
     t.string   "website"
     t.string   "phone"
+    t.string   "company_name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

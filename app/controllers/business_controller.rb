@@ -12,13 +12,27 @@ class BusinessController < ApplicationController
       @user = User.new(user_params)
       @user.role = 1  # client
 
-      if @user.save
-         flash[:notice] = 'You have signed up successfully. If enabled, a confirmation was sent to your e-mail.'
-         sign_in @user
-         redirect_to business_path
+      # check if company already exists
+      company_name = params[:user][:company_name]
+
+      if !company_name.nil? && Company.where(:name=>company_name).blank? && @user.save
+        @company = Company.new
+        @company.name = company_name
+        @company.slug = company_name.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')
+        @company.home_site = params[:user][:website]
+        @company.email = params[:user][:email]
+        @company.save
+
+        UserCompany.create(:user_id => @user.id, :company_id => @company.id)
+
+        flash[:notice] = 'You have signed up successfully. If enabled, a confirmation was sent to your e-mail.'
+        sign_in @user
+        redirect_to business_path
       else
+        flash[:danger] = 'Заполните пустые поля. Также, компания с таким названием может быть уже зарегестрирована.'
         render :action => :signup
       end
+
     else
       #handle gets
       @user = User.new
@@ -70,6 +84,7 @@ class BusinessController < ApplicationController
   # Never trust parameters from the scary internet, only allow the white list through.
   def user_params
     params.require(:user).permit(:email, :password, :password_confirmation,
+                                 :company_name,
                                  :first_name, :last_name, :website, :phone, :country)
   end
 end

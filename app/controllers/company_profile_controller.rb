@@ -1,5 +1,6 @@
 class CompanyProfileController < ApplicationController
   layout 'dashboard'
+  before_action :set_current_company
 
   def information
   end
@@ -39,4 +40,14 @@ class CompanyProfileController < ApplicationController
       end
     end
   end
+
+  private
+  # Use callbacks to share common setup or constraints between actions.
+  def set_current_company
+    if current_user.present? && !UserCompany.where(:user_id=>current_user.id).blank?
+      userCompany = UserCompany.find_by_user_id(current_user.id)
+      @company = Company.find(userCompany.company_id)
+    end
+  end
+  # end private
 end

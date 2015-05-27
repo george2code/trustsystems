@@ -75,7 +75,7 @@ gem 'wicked'
 # (It's because the nodes on which you bind events no longer exist.), but this gem solves that problem.
 gem 'jquery-turbolinks'
 
-
+gem 'paperclip', '~> 4.2'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

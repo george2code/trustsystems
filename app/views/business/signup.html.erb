@@ -55,6 +55,11 @@
             </div>
             <div class="form-group">
               <div class="col-md-12">
+                <%= f.text_field :company_name, validate: { presence: true }, class: 'form-control', placeholder: 'Company name' %>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-md-12">
                 <div class="f32">
                   <ul id="flag">
                     <%= flag(:us, "USA") %>

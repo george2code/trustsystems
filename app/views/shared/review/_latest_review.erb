@@ -14,7 +14,8 @@
                 <li><a href="#"></a></li>
             <% end %>
           </ul>
-          <p  class="calendar pull-right"><%= review.updated_at.strftime("%d.%m.%Y / %H:%M") %></p>
+          <!--<p  class="calendar pull-right"><%= review.updated_at.strftime("%d.%m.%Y / %H:%M") %></p>-->
+          <p class="pull-right"><span class="label label-danger"><%= review.updated_at.strftime("%d.%m.%Y | %H:%M") %></span></p>
         </div>
         <p><a href="/reviews/<%= @user.id %>"><%= @user.full_name %></a></p>
         <p>has been published <%= Review.where(user_id: review.user_id, company_id: review.company_id).count %> review(s)</p>

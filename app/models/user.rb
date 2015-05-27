@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
   has_many  :reviews
   has_many :authorizations
 
+  has_many  :user_companies
+
   enum role: [:user, :client, :admin]
   after_initialize :set_default_role, :if => :new_record?
 
